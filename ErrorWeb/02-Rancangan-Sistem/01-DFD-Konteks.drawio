@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" modified="2026-11-17T00:00:00.000Z" agent="OpenCode" version="24.7.17" type="device" compressed="false">
+<diagram id="dfd-konteks" name="01-DFD-Konteks">
+  <mxGraphModel dx="700" dy="425" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" math="0" shadow="0">
+    <root>
+      <mxCell id="0"/>
+      <mxCell id="1" parent="0"/>
+      <mxCell id="head1" value="DFD Konteks — EventKita" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#111111;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="50" y="24" width="1300" height="34" as="geometry"/>
+  </mxCell>
+      <mxCell id="sub1" value="Diagram alir data tingkat konteks: sistem sebagai satu proses dan dua entitas eksternal." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#8a8a8a;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="50" y="54" width="1300" height="24" as="geometry"/>
+  </mxCell>
+      <mxCell id="e1" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#c9c9c9;strokeWidth=1;" edge="1" parent="1">
+    <mxGeometry relative="1" as="geometry">
+      <Array as="points"><mxPoint x="50" y="790"/><mxPoint x="1350" y="790"/></Array>
+    </mxGeometry>
+  </mxCell>
+      <mxCell id="foot1" value="ERRORWEB  •  EVENTKITA  •  RANCANGAN SISTEM" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#555555;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="50" y="802" width="600" height="22" as="geometry"/>
+  </mxCell>
+      <mxCell id="foot21" value="Platform Pendaftaran dan Manajemen Event" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#555555;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="950" y="802" width="400" height="22" as="geometry"/>
+  </mxCell>
+      <mxCell id="v1" value="PESERTA&lt;br&gt;Pengguna / Peserta" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#ffffff;strokeColor=#111111;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="100" y="375" width="200" height="100" as="geometry"/>
+  </mxCell>
+      <mxCell id="v2" value="ADMIN&lt;br&gt;Penyelenggara Event" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#ffffff;strokeColor=#111111;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="1100" y="375" width="200" height="100" as="geometry"/>
+  </mxCell>
+      <mxCell id="v3" value="0&lt;br&gt;SISTEM INFORMASI&lt;br&gt;EVENTKITA" style="html=1;whiteSpace=wrap;rounded=1;arcSize=16;fillColor=#ffffff;strokeColor=#111111;strokeWidth=2.5;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="560" y="340" width="280" height="150" as="geometry"/>
+  </mxCell>
+      <mxCell id="tx1" value="Data registrasi akun&lt;br&gt;&amp; pendaftaran event" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#555555;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="360" y="360" width="200" height="40" as="geometry"/>
+  </mxCell>
+      <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111111;strokeWidth=1.3;" edge="1" parent="1">
+    <mxGeometry relative="1" as="geometry">
+      <Array as="points"><mxPoint x="300" y="405"/><mxPoint x="560" y="405"/></Array>
+    </mxGeometry>
+  </mxCell>
+      <mxCell id="tx2" value="Informasi event, e-tiket&lt;br&gt;&amp; status pendaftaran" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#555555;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="340" y="468" width="220" height="40" as="geometry"/>
+  </mxCell>
+      <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111111;strokeWidth=1.3;" edge="1" parent="1">
+    <mxGeometry relative="1" as="geometry">
+      <Array as="points"><mxPoint x="560" y="455"/><mxPoint x="300" y="455"/></Array>
+    </mxGeometry>
+  </mxCell>
+      <mxCell id="tx3" value="Data event &amp; keputusan&lt;br&gt;verifikasi pendaftar" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#555555;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="890" y="360" width="220" height="40" as="geometry"/>
+  </mxCell>
+      <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111111;strokeWidth=1.3;" edge="1" parent="1">
+    <mxGeometry relative="1" as="geometry">
+      <Array as="points"><mxPoint x="1100" y="405"/><mxPoint x="840" y="405"/></Array>
+    </mxGeometry>
+  </mxCell>
+      <mxCell id="tx4" value="Daftar pendaftar &amp; rekap&lt;br&gt;event" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#555555;fontFamily=Inter;" vertex="1" parent="1">
+    <mxGeometry x="890" y="468" width="200" height="40" as="geometry"/>
+  </mxCell>
+      <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111111;strokeWidth=1.3;" edge="1" parent="1">
+    <mxGeometry relative="1" as="geometry">
+      <Array as="points"><mxPoint x="840" y="455"/><mxPoint x="1100" y="455"/></Array>
+    </mxGeometry>
+  </mxCell>
+      <mxCell id="v4" value="KETERANGAN&lt;br&gt;DFD konteks memetakan EventKita sebagai satu proses utama yang berinteraksi dengan dua entitas eksternal. Peserta mengirim data akun &amp; pendaftaran; Admin mengirim data event &amp; keputusan verifikasi." style="html=1;whiteSpace=wrap;rounded=1;arcSize=8;fillColor=#f4f4f4;strokeColor=#c9c9c9;strokeWidth=1;align=left;verticalAlign=top;fontSize=11;fontStyle=0;spacingLeft=12;spacingTop=8;fontFamily=Inter;fontColor=#222222;" vertex="1" parent="1">
+    <mxGeometry x="390" y="590" width="620" height="100" as="geometry"/>
+  </mxCell>
+    </root>
+  </mxGraphModel>
+</diagram>
+</mxfile>

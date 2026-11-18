@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111111"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a8a"/>
+    </marker>
+    <marker id="arrowOpen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#111111" stroke-width="1.4"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#dddddd" stroke-width="1"/>
+    </pattern>
+    <style>text { -webkit-font-smoothing: antialiased; }</style>
+  </defs>
+  <rect width="1280" height="900" fill="#ffffff"/>
+  <text x="50" y="48" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0" opacity="1">Alur Navigasi — EventKita</text>
+  <text x="50" y="74" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">Peta alur pengguna publik, peserta, dan admin antar halaman dalam aplikasi.</text>
+  <line x1="50" y1="840" x2="1230" y2="840" stroke="#c9c9c9" stroke-width="1"/>
+  <text x="50" y="864" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600" fill="#8a8a8a" text-anchor="start" letter-spacing="1" opacity="1">ERRORWEB  •  EVENTKITA  •  DESAIN UI/UX</text>
+  <text x="1230" y="864" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="10" font-weight="400" fill="#8a8a8a" text-anchor="end" letter-spacing="0" opacity="1">Platform Pendaftaran dan Manajemen Event</text>
+  
+    <text x="190" y="180" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800" fill="#555555" text-anchor="middle" letter-spacing="1.2" opacity="1">1. PUBLIK</text>
+    <text x="490" y="180" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800" fill="#555555" text-anchor="middle" letter-spacing="1.2" opacity="1">2. AUTENTIKASI</text>
+    <text x="790" y="180" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800" fill="#555555" text-anchor="middle" letter-spacing="1.2" opacity="1">3. AREA PESERTA</text>
+    <text x="1070" y="180" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800" fill="#555555" text-anchor="middle" letter-spacing="1.2" opacity="1">4. AREA ADMIN</text>
+
+    
+    <rect x="80" y="200" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="190" y="230" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Landing Page</text>
+    <text x="190" y="250" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Daftar event publish</text>
+    
+    <rect x="80" y="330" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="190" y="360" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Detail Event</text>
+    <text x="190" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Info &amp; tombol daftar</text>
+    
+    <rect x="380" y="330" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="490" y="360" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Login Peserta</text>
+    <text x="490" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Email + password</text>
+    
+    <rect x="380" y="460" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="490" y="490" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Registrasi Akun</text>
+    <text x="490" y="510" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Buat akun baru</text>
+    
+    <rect x="680" y="330" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="790" y="360" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Dashboard Peserta</text>
+    <text x="790" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Riwayat pendaftaran</text>
+    
+    <rect x="960" y="330" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="1070" y="360" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">E-Tiket</text>
+    <text x="1070" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Kode registrasi</text>
+    
+    <rect x="680" y="470" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="790" y="500" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Profil Peserta</text>
+    <text x="790" y="520" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Ubah nama / password</text>
+    
+    <rect x="380" y="700" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="490" y="730" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Login Admin</text>
+    <text x="490" y="750" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Username + password</text>
+    
+    <rect x="680" y="700" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="790" y="730" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Dashboard Admin</text>
+    <text x="790" y="750" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Statistik &amp; event</text>
+    
+    <rect x="960" y="700" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="1070" y="730" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Kelola Event</text>
+    <text x="1070" y="750" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Tambah / edit event</text>
+    
+    <rect x="960" y="830" width="220" height="70" rx="10" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <text x="1070" y="860" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Verifikasi Pendaftar</text>
+    <text x="1070" y="880" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Terima / tolak</text>
+
+    <line x1="190" y1="270" x2="190" y2="326" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="300" y1="365" x2="376" y2="365" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <text x="340" y="355" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#555555" text-anchor="middle" letter-spacing="0" opacity="1">Daftar</text>
+    <line x1="600" y1="365" x2="676" y2="365" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <text x="638" y="355" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#555555" text-anchor="middle" letter-spacing="0" opacity="1">Login OK</text>
+    <polyline points="300,235 340,235 340,495 376,495" fill="none" stroke="#111111" stroke-width="1" stroke-linejoin="round" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+    <polyline points="600,495 640,495 640,415 720,415 720,400" fill="none" stroke="#111111" stroke-width="1" stroke-linejoin="round" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+    <text x="650" y="480" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Akun dibuat</text>
+    <line x1="900" y1="365" x2="956" y2="365" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="790" y1="400" x2="790" y2="466" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <polyline points="80,270 40,270 40,735 376,735" fill="none" stroke="#111111" stroke-width="1" stroke-linejoin="round" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+    <text x="52" y="520" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Akses admin</text>
+    <line x1="600" y1="735" x2="676" y2="735" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="900" y1="735" x2="956" y2="735" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <polyline points="840,770 840,865 956,865" fill="none" stroke="#111111" stroke-width="1" stroke-linejoin="round" marker-end="url(#arrow)"/>
+
+    <rect x="80" y="850" width="620" height="52" rx="10" fill="#f4f4f4" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+    <text x="104" y="874" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#555555" text-anchor="start" letter-spacing="1.2" opacity="1">LEGENDA</text>
+    <line x1="200" y1="882" x2="264" y2="882" stroke="#111111" stroke-width="1" marker-end="url(#arrow)"/>
+    <text x="274" y="886" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Alur utama</text>
+    <line x1="390" y1="882" x2="454" y2="882" stroke="#111111" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+    <text x="464" y="886" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Akses / alternatif</text>
+  
+  </svg>

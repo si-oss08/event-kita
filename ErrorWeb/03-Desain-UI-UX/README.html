@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desain UI/UX — EventKita</title>
+<style>
+  :root { --ink:#111; --text:#222; --mid:#555; --soft:#777; --line:#c9c9c9; --bg:#f4f4f4; }
+  * { box-sizing:border-box; }
+  body { margin:0 auto; max-width:960px; padding:48px 56px 72px; color:var(--text); background:#fff;
+    font:15px/1.65 Inter,'Segoe UI',Arial,sans-serif; }
+  header { border-bottom:3px solid var(--ink); padding-bottom:14px; margin-bottom:28px; }
+  header .eyebrow { font-size:11px; font-weight:800; letter-spacing:1.8px; color:var(--soft); text-transform:uppercase; }
+  header .brand { font-size:12px; color:var(--mid); margin-top:6px; }
+  h1,h2,h3,h4,h5,h6 { color:var(--ink); line-height:1.25; margin:28px 0 10px; }
+  h1 { font-size:28px; margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px; }
+  h2 { font-size:21px; border-left:5px solid var(--ink); padding-left:12px; }
+  h3 { font-size:17px; }
+  p { margin:10px 0; }
+  a { color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+  strong { color:var(--ink); }
+  ul,ol { margin:10px 0 10px 24px; padding:0; }
+  li { margin:5px 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:9px 11px; vertical-align:top; text-align:left; }
+  th { background:var(--ink); color:#fff; font-weight:700; }
+  tr:nth-child(even) td { background:var(--bg); }
+  pre { background:var(--bg); border:1px solid var(--line); border-left:5px solid var(--ink);
+    padding:14px 16px; overflow:auto; font:12.5px/1.55 'Cascadia Mono',Consolas,monospace; white-space:pre-wrap; }
+  code { background:var(--bg); padding:1px 5px; border-radius:3px; font-family:'Cascadia Mono',Consolas,monospace; font-size:0.92em; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:5px solid var(--ink); margin:14px 0; padding:8px 16px; background:var(--bg); color:var(--mid); }
+  footer { margin-top:48px; border-top:1px solid var(--line); padding-top:14px; font-size:11px; color:var(--soft);
+    display:flex; justify-content:space-between; gap:16px; }
+  @media print {
+    @page { size:A4; margin:16mm; }
+    body { max-width:none; padding:0; font-size:11pt; }
+    header { margin-bottom:18px; }
+    h1,h2,h3 { break-after:avoid; }
+    table,pre,blockquote { break-inside:avoid; }
+    a { color:var(--ink); }
+    footer { position:fixed; bottom:0; left:0; right:0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ErrorWeb &middot; EventKita</div>
+  <div class="brand">Platform Pendaftaran dan Manajemen Event &mdash; Dokumen Proyek</div>
+</header>
+<main>
+<h1>Desain UI/UX — EventKita</h1>
+<p>Folder ini berisi seluruh desain antarmuka EventKita dalam format <strong>SVG hitam putih</strong>. Desain dibuat sebagai wireframe high-fidelity dengan komponen konsisten agar mudah dicetak, dibagikan, dan dijadikan acuan implementasi.</p>
+<h2>1. Prinsip Desain</h2>
+<ol><li><strong>Monokromatik</strong> — hanya menggunakan hitam, putih, dan gradasi abu-abu.</li><li><strong>Konsistensi</strong> — navbar, kartu, tombol, field, badge, dan footer memakai bentuk yang sama di semua halaman.</li><li><strong>Hierarki jelas</strong> — judul tebal, subjudul lebih ringan, label kecil, dan aksi utama berupa tombol solid hitam.</li><li><strong>Kepadatan informasi</strong> — data penting ditampilkan dalam kartu dan tabel agar mudah dipindai.</li><li><strong>Arah pengguna jelas</strong> — alur navigasi diberikan terpisah pada <code>12-Alur-Navigasi.svg</code>.</li><li><strong>Print-friendly</strong> — SVG dapat dibuka dan dicetak tanpa kehilangan detail.</li></ol>
+<h2>2. Style Guide</h2>
+<p>Artefak: <a href="00-Style-Guide.svg"><code>00-Style-Guide.svg</code></a></p>
+<table>
+<thead><tr><th>Elemen</th><th>Spesifikasi</th></tr></thead>
+<tbody>
+<tr><td>Warna utama</td><td><code>#111111</code> (hitam tinta)</td></tr>
+<tr><td>Teks utama</td><td><code>#222222</code></td></tr>
+<tr><td>Teks sekunder</td><td><code>#555555</code></td></tr>
+<tr><td>Teks pendukung</td><td><code>#8a8a8a</code></td></tr>
+<tr><td>Garis</td><td><code>#c9c9c9</code>, <code>#9a9a9a</code></td></tr>
+<tr><td>Permukaan</td><td><code>#ffffff</code>, <code>#f4f4f4</code>, <code>#e9e9e9</code>, <code>#dcdcdc</code></td></tr>
+<tr><td>Font</td><td>Inter / Segoe UI / Arial</td></tr>
+<tr><td>Font kode</td><td>Cascadia Mono / Consolas / monospace</td></tr>
+<tr><td>Radius umum</td><td>8–12 px</td></tr>
+<tr><td>Ukuran kanvas</td><td>1280 × 900 px</td></tr>
+<tr><td>Bingkai browser</td><td>40,84 → 1240,852</td></tr>
+</tbody></table>
+<h3>Komponen</h3>
+<ul><li><strong>Tombol primer</strong>: isi hitam, teks putih, radius 9 px.</li><li><strong>Tombol sekunder</strong>: isi putih, garis hitam, teks hitam.</li><li><strong>Field</strong>: label 10,5 px tebal, kotak tinggi 40 px, placeholder abu-abu muda.</li><li><strong>Badge</strong>: bentuk pil, isi putih atau hitam, teks 8,5 px tebal.</li><li><strong>Kartu</strong>: garis abu-abu, sudut membulat, bayangan disimulasikan dengan garis.</li><li><strong>Navbar</strong>: logo <code>EK</code>, tautan Home/Events, serta area auth kanan.</li><li><strong>Footer</strong>: latar hitam, logo putih, teks abu-abu muda.</li></ul>
+<h2>3. Daftar Layar</h2>
+<table>
+<thead><tr><th>No</th><th>File</th><th>Halaman</th><th>Fokus Utama</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><a href="00-Style-Guide.svg"><code>00-Style-Guide.svg</code></a></td><td>Style guide</td><td>Warna, tipografi, komponen</td></tr>
+<tr><td>2</td><td><a href="01-Landing-Page.svg"><code>01-Landing-Page.svg</code></a></td><td>Landing page</td><td>Hero, statistik, daftar event publish</td></tr>
+<tr><td>3</td><td><a href="02-Login-Peserta.svg"><code>02-Login-Peserta.svg</code></a></td><td>Login peserta</td><td>Form email &amp; password</td></tr>
+<tr><td>4</td><td><a href="03-Registrasi-Peserta.svg"><code>03-Registrasi-Peserta.svg</code></a></td><td>Registrasi peserta</td><td>Form nama, email, password, konfirmasi</td></tr>
+<tr><td>5</td><td><a href="04-Detail-Event.svg"><code>04-Detail-Event.svg</code></a></td><td>Detail event</td><td>Poster, informasi, tombol daftar</td></tr>
+<tr><td>6</td><td><a href="05-Dashboard-Peserta.svg"><code>05-Dashboard-Peserta.svg</code></a></td><td>Dashboard peserta</td><td>Riwayat pendaftaran &amp; status</td></tr>
+<tr><td>7</td><td><a href="06-E-Tiket.svg"><code>06-E-Tiket.svg</code></a></td><td>E-tiket</td><td>Kode registrasi, detail event, status</td></tr>
+<tr><td>8</td><td><a href="07-Profil-Peserta.svg"><code>07-Profil-Peserta.svg</code></a></td><td>Profil peserta</td><td>Ubah nama &amp; password</td></tr>
+<tr><td>9</td><td><a href="08-Login-Admin.svg"><code>08-Login-Admin.svg</code></a></td><td>Login admin</td><td>Form username &amp; password</td></tr>
+<tr><td>10</td><td><a href="09-Dashboard-Admin.svg"><code>09-Dashboard-Admin.svg</code></a></td><td>Dashboard admin</td><td>Statistik, event terbaru, sidebar</td></tr>
+<tr><td>11</td><td><a href="10-Form-Event.svg"><code>10-Form-Event.svg</code></a></td><td>Form event</td><td>Input event &amp; unggah poster</td></tr>
+<tr><td>12</td><td><a href="11-Verifikasi-Pendaftar.svg"><code>11-Verifikasi-Pendaftar.svg</code></a></td><td>Verifikasi pendaftar</td><td>Tabel pendaftar &amp; aksi terima/tolak</td></tr>
+<tr><td>13</td><td><a href="12-Alur-Navigasi.svg"><code>12-Alur-Navigasi.svg</code></a></td><td>Alur navigasi</td><td>Peta halaman publik, peserta, admin</td></tr>
+</tbody></table>
+<h2>4. Alur Navigasi</h2>
+<p>Artefak: <a href="12-Alur-Navigasi.svg"><code>12-Alur-Navigasi.svg</code></a></p>
+<h3>Publik</h3>
+<p><code>Landing Page</code> → <code>Detail Event</code> → <code>Login Peserta</code> → <code>Dashboard Peserta</code>.</p>
+<p>Tautan alternatif dari landing page menuju <code>Registrasi Peserta</code>, dan dari landing page juga tersedia akses ke <code>Login Admin</code>.</p>
+<h3>Peserta</h3>
+<p><code>Dashboard Peserta</code> → <code>E-Tiket</code>, <code>Profil Peserta</code>, atau kembali ke daftar event untuk mendaftar lagi.</p>
+<h3>Admin</h3>
+<p><code>Login Admin</code> → <code>Dashboard Admin</code> → <code>Kelola Event</code> atau <code>Verifikasi Pendaftar</code>.</p>
+<h2>5. Catatan Implementasi</h2>
+<ul><li>Desain dibuat untuk lebar desktop 1280 px; implementasi Blade memakai utilitas responsif Tailwind untuk layar lebih kecil.</li><li>Status pada desain menggunakan representasi teks/badge: <code>pending</code>, <code>diterima</code>, <code>ditolak</code>, <code>publish</code>, <code>draft</code>.</li><li>Tombol dan field pada SVG merupakan panduan visual, bukan komponen interaktif.</li><li>Seluruh SVG telah divalidasi sebagai XML sehingga aman dibuka di browser maupun editor vektor.</li></ul>
+<h2>6. Validasi Artefak</h2>
+<p>Semua file SVG di folder ini dan folder <code>02-Rancangan-Sistem</code> telah melalui pemeriksaan:</p>
+<pre><code class="language-powershell">Get-ChildItem -Recurse -Filter *.svg .\ErrorWeb | ForEach-Object {
+    [xml](Get-Content -Raw $_.FullName) | Out-Null
+}</code></pre>
+<p>Hasil: seluruh SVG valid sebagai XML.</p>
+</main>
+<footer>
+  <span>ErrorWeb &mdash; EventKita</span>
+  <span>Dokumen ini dapat dicetak langsung dari browser</span>
+</footer>
+</body>
+</html>

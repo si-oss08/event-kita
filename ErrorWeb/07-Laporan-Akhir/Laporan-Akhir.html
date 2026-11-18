@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laporan Akhir — Platform Pendaftaran dan Manajemen Event (EventKita)</title>
+<style>
+  :root { --ink:#111; --text:#222; --mid:#555; --soft:#777; --line:#c9c9c9; --bg:#f4f4f4; }
+  * { box-sizing:border-box; }
+  body { margin:0 auto; max-width:960px; padding:48px 56px 72px; color:var(--text); background:#fff;
+    font:15px/1.65 Inter,'Segoe UI',Arial,sans-serif; }
+  header { border-bottom:3px solid var(--ink); padding-bottom:14px; margin-bottom:28px; }
+  header .eyebrow { font-size:11px; font-weight:800; letter-spacing:1.8px; color:var(--soft); text-transform:uppercase; }
+  header .brand { font-size:12px; color:var(--mid); margin-top:6px; }
+  h1,h2,h3,h4,h5,h6 { color:var(--ink); line-height:1.25; margin:28px 0 10px; }
+  h1 { font-size:28px; margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px; }
+  h2 { font-size:21px; border-left:5px solid var(--ink); padding-left:12px; }
+  h3 { font-size:17px; }
+  p { margin:10px 0; }
+  a { color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+  strong { color:var(--ink); }
+  ul,ol { margin:10px 0 10px 24px; padding:0; }
+  li { margin:5px 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:9px 11px; vertical-align:top; text-align:left; }
+  th { background:var(--ink); color:#fff; font-weight:700; }
+  tr:nth-child(even) td { background:var(--bg); }
+  pre { background:var(--bg); border:1px solid var(--line); border-left:5px solid var(--ink);
+    padding:14px 16px; overflow:auto; font:12.5px/1.55 'Cascadia Mono',Consolas,monospace; white-space:pre-wrap; }
+  code { background:var(--bg); padding:1px 5px; border-radius:3px; font-family:'Cascadia Mono',Consolas,monospace; font-size:0.92em; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:5px solid var(--ink); margin:14px 0; padding:8px 16px; background:var(--bg); color:var(--mid); }
+  footer { margin-top:48px; border-top:1px solid var(--line); padding-top:14px; font-size:11px; color:var(--soft);
+    display:flex; justify-content:space-between; gap:16px; }
+  @media print {
+    @page { size:A4; margin:16mm; }
+    body { max-width:none; padding:0; font-size:11pt; }
+    header { margin-bottom:18px; }
+    h1,h2,h3 { break-after:avoid; }
+    table,pre,blockquote { break-inside:avoid; }
+    a { color:var(--ink); }
+    footer { position:fixed; bottom:0; left:0; right:0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ErrorWeb &middot; EventKita</div>
+  <div class="brand">Platform Pendaftaran dan Manajemen Event &mdash; Dokumen Proyek</div>
+</header>
+<main>
+<h1>Laporan Akhir — Platform Pendaftaran dan Manajemen Event (EventKita)</h1>
+<p><strong>Kelompok:</strong> ErrorWeb   <strong>Proyek:</strong> Platform Pendaftaran dan Manajemen Event (EventKita)   <strong>Teknologi:</strong> Laravel, Blade, Tailwind CSS, MySQL   <strong>Dokumentasi:</strong> Folder <code>ErrorWeb/</code> pada root repository   <strong>Tanggal:</strong> November 2026</p>
+<hr>
+<h2>Ringkasan Eksekutif</h2>
+<p>EventKita adalah aplikasi web untuk mengelola proses pendaftaran event dari sisi peserta dan penyelenggara. Aplikasi memungkinkan publik melihat event, peserta mendaftar dan memperoleh e-tiket, serta admin membuat event dan memverifikasi pendaftar.</p>
+<p>Seluruh deliverable kelompok dikumpulkan dalam folder <code>ErrorWeb/</code> yang terdiri dari tujuh bagian: analisis kebutuhan, rancangan sistem, desain UI/UX, pengembangan aplikasi, laporan testing, aplikasi final, dan laporan akhir. Folder pengembangan sengaja dikosongkan karena kode aplikasi berada langsung di repository, folder aplikasi final hanya berisi catatan hosting, dan tidak dibuat video demonstrasi.</p>
+<h2>Daftar Isi</h2>
+<ol><li>Pendahuluan</li><li>Analisis Kebutuhan</li><li>Rancangan Sistem</li><li>Desain UI/UX</li><li>Hasil Pengujian</li><li>Pembahasan Temuan</li><li>Kesimpulan dan Saran</li><li>Lampiran Artefak</li></ol>
+<hr>
+<h2>1. Pendahuluan</h2>
+<h3>1.1 Latar Belakang</h3>
+<p>Pendaftaran event yang dilakukan secara manual sering menimbulkan duplikasi data, sulitnya verifikasi, dan minimnya informasi status bagi peserta. EventKita menyediakan satu platform terpusat untuk publikasi event, pendaftaran peserta, penerbitan e-tiket, dan verifikasi oleh admin.</p>
+<h3>1.2 Tujuan</h3>
+<ul><li>Membangun platform pendaftaran event berbasis web.</li><li>Memisahkan area publik, peserta, dan admin.</li><li>Menyediakan dokumentasi perencanaan dan rancangan yang lengkap.</li><li>Menghasilkan desain antarmuka hitam putih yang konsisten.</li><li>Melakukan pengujian dan mendokumentasikan hasilnya.</li></ul>
+<h3>1.3 Ruang Lingkup</h3>
+<p>Termasuk: landing page, detail event, autentikasi peserta/admin, dashboard peserta, pendaftaran event, e-tiket, profil, dashboard admin, CRUD event, dan verifikasi pendaftar.</p>
+<p>Tidak termasuk: pembayaran online, notifikasi email/SMS, aplikasi mobile, video demo, deployment, dan pengisian folder pengembangan dengan salinan kode.</p>
+<h2>2. Analisis Kebutuhan</h2>
+<h3>2.1 Pemangku Kepentingan</h3>
+<table>
+<thead><tr><th>Aktor</th><th>Peran</th></tr></thead>
+<tbody>
+<tr><td>Peserta</td><td>Melihat event, mendaftar, melihat tiket dan status</td></tr>
+<tr><td>Admin</td><td>Mengelola event dan memverifikasi pendaftar</td></tr>
+<tr><td>Tim ErrorWeb</td><td>Mengembangkan dan mendokumentasikan sistem</td></tr>
+<tr><td>Penguji</td><td>Menilai kelengkapan artefak dan fungsi aplikasi</td></tr>
+</tbody></table>
+<h3>2.2 Kebutuhan Fungsional Utama</h3>
+<ol><li>Menampilkan event berstatus <code>publish</code>.</li><li>Menampilkan detail event berdasarkan slug.</li><li>Registrasi, login, logout, dan kelola profil peserta.</li><li>Pendaftaran event dengan pencegahan duplikasi.</li><li>E-tiket berbasis kode registrasi unik.</li><li>Login admin dengan guard terpisah.</li><li>Membuat dan memperbarui event.</li><li>Verifikasi pendaftaran menjadi <code>diterima</code> atau <code>ditolak</code>.</li></ol>
+<h3>2.3 Kebutuhan Non-Fungsional</h3>
+<p>Antara lain: password di-hash, sesi diregenerasi, validasi server, keunikan data, foreign key dengan cascade, soft delete, desain monokrom, dan dokumentasi yang dapat dicetak.</p>
+<p>Dokumen lengkap: <a href="../01-Analisis-Kebutuhan/Analisis-Kebutuhan.md"><code>../01-Analisis-Kebutuhan/Analisis-Kebutuhan.md</code></a>.</p>
+<h2>3. Rancangan Sistem</h2>
+<h3>3.1 Arsitektur</h3>
+<p>Aplikasi memakai pola controller–model–view Laravel. Route menentukan alur ke controller, controller melakukan validasi dan memanggil model, model mengakses database, lalu view dirender atau redirect diberikan.</p>
+<h3>3.2 DFD</h3>
+<ul><li><strong>DFD Konteks:</strong> satu proses sistem dengan dua entitas eksternal, Peserta dan Admin.</li><li><strong>DFD Level 0:</strong> lima proses utama — Autentikasi &amp; Akun, Kelola Event, Pendaftaran Event, Verifikasi Pendaftar, Informasi &amp; E-Tiket — serta empat penyimpanan data <code>users</code>, <code>admins</code>, <code>events</code>, dan <code>registrasis</code>.</li></ul>
+<h3>3.3 ERD</h3>
+<p>Empat entitas utama:</p>
+<ul><li><code>users</code> berelasi 1:N dengan <code>registrasis</code>.</li><li><code>admins</code> berelasi 1:N dengan <code>events</code>.</li><li><code>events</code> berelasi 1:N dengan <code>registrasis</code>.</li></ul>
+<h3>3.4 Use Case dan Activity</h3>
+<p>Use case mencakup delapan aktivitas peserta dan tiga aktivitas admin. Activity diagram menggambarkan alur pendaftaran event, verifikasi pendaftar, kelola event, dan registrasi akun.</p>
+<p>Diagram juga tersedia dalam format Draw.io yang dapat diedit: <a href="../02-Rancangan-Sistem/Rancangan-Sistem.drawio"><code>Rancangan-Sistem.drawio</code></a> berisi 9 halaman, dengan file per diagram tersedia di folder yang sama.</p>
+<p>Dokumen lengkap: <a href="../02-Rancangan-Sistem/Rancangan-Sistem.md"><code>../02-Rancangan-Sistem/Rancangan-Sistem.md</code></a>.</p>
+<h2>4. Desain UI/UX</h2>
+<p>Seluruh desain dibuat dalam format SVG dengan palet hitam, putih, dan abu-abu. Kanvas desktop 1280 × 900 px digunakan secara konsisten dengan bingkai browser, navbar, footer, kartu, tombol, dan field yang seragam.</p>
+<p>Layar yang dibuat:</p>
+<ol><li>Style guide.</li><li>Landing page.</li><li>Login peserta.</li><li>Registrasi peserta.</li><li>Detail event.</li><li>Dashboard peserta.</li><li>E-tiket.</li><li>Profil peserta.</li><li>Login admin.</li><li>Dashboard admin.</li><li>Form event.</li><li>Verifikasi pendaftar.</li><li>Alur navigasi.</li></ol>
+<p>Dokumen lengkap: <a href="../03-Desain-UI-UX/README.md"><code>../03-Desain-UI-UX/README.md</code></a>.</p>
+<h2>5. Hasil Pengujian</h2>
+<h3>5.1 Smoke Test HTTP</h3>
+<p>Sembilan route diuji; seluruhnya menghasilkan status sesuai ekspektasi. Route terproteksi mengarahkan guest ke halaman login, dan slug tidak ditemukan menghasilkan 404.</p>
+<h3>5.2 Test Otomatis</h3>
+<p>Pest menjalankan dua test: satu lulus dan satu gagal. Kegagalan terjadi karena lingkungan test menggunakan SQLite <code>:memory:</code> tanpa migrasi, sehingga tabel <code>events</code> belum ada.</p>
+<h3>5.3 Validasi SVG dan Draw.io</h3>
+<p>Sebanyak 22 file SVG dan 10 file Draw.io divalidasi sebagai XML dan seluruhnya dinyatakan valid. File Draw.io terdiri dari satu file multi-halaman dan sembilan file per diagram.</p>
+<h3>5.4 Ringkasan</h3>
+<table>
+<thead><tr><th>Pengujian</th><th>Hasil</th></tr></thead>
+<tbody>
+<tr><td>Smoke test</td><td>9/9 lulus</td></tr>
+<tr><td>Pest</td><td>1 lulus, 1 gagal</td></tr>
+<tr><td>SVG &amp; Draw.io</td><td>22/22 SVG + 10/10 Draw.io valid</td></tr>
+<tr><td>Temuan perbaikan</td><td>8 item</td></tr>
+</tbody></table>
+<p>Dokumen lengkap: <a href="../05-Laporan-Testing/Laporan-Testing.md"><code>../05-Laporan-Testing/Laporan-Testing.md</code></a> dan <a href="../05-Laporan-Testing/Hasil-Pengujian.md"><code>../05-Laporan-Testing/Hasil-Pengujian.md</code></a>.</p>
+<h2>6. Pembahasan Temuan</h2>
+<table>
+<thead><tr><th>Temuan</th><th>Prioritas</th></tr></thead>
+<tbody>
+<tr><td><code>RefreshDatabase</code> belum aktif pada test feature</td><td>Tinggi</td></tr>
+<tr><td>Statistik pendaftaran dan approval hard-coded <code>0</code></td><td>Tinggi</td></tr>
+<tr><td>Pendaftaran belum memvalidasi status, kuota, dan waktu event</td><td>Tinggi</td></tr>
+<tr><td>Verifikasi belum dibatasi pada event milik admin sendiri</td><td>Tinggi</td></tr>
+<tr><td><code>is_active</code> admin belum diperiksa saat login</td><td>Tinggi</td></tr>
+<tr><td>Guest admin diarahkan ke <code>/login</code>, bukan <code>/admin/login</code></td><td>Sedang</td></tr>
+<tr><td>Detail publik belum memfilter status <code>publish</code></td><td>Sedang</td></tr>
+<tr><td>Enum status event lebih luas dari pilihan form</td><td>Rendah</td></tr>
+</tbody></table>
+<p>Seluruh temuan hanya dicatat; tidak ada perubahan pada kode aplikasi dalam kegiatan dokumentasi ini.</p>
+<h2>7. Kesimpulan dan Saran</h2>
+<h3>Kesimpulan</h3>
+<ul><li>Struktur folder <code>ErrorWeb/</code> lengkap sesuai permintaan kelompok.</li><li>Diagram sistem dan desain UI/UX telah dibuat dalam format SVG hitam putih dan valid; diagram rancangan sistem juga tersedia dalam format Draw.io yang dapat diedit.</li><li>Dokumen analisis, rancangan, pengujian, aplikasi final, dan laporan akhir telah tersedia.</li><li>Aplikasi dapat diakses pada route publik dan proteksi akses dasar berjalan.</li><li>Test otomatis belum lulus karena konfigurasi database test belum siap.</li></ul>
+<h3>Saran</h3>
+<ol><li>Aktifkan <code>RefreshDatabase</code> dan tambahkan test fitur untuk alur pendaftaran serta verifikasi.</li><li>Terapkan perbaikan berprioritas tinggi sebelum hosting produksi.</li><li>Samakan redirect guest admin ke <code>/admin/login</code>.</li><li>Hitung statistik admin dari data aktual.</li><li>Batasi verifikasi dan detail event sesuai kepemilikan/status.</li></ol>
+<h2>8. Lampiran Artefak</h2>
+<table>
+<thead><tr><th>Folder</th><th>Isi</th></tr></thead>
+<tbody>
+<tr><td><a href="../README.md"><code>../README.md</code></a></td><td>Ringkasan seluruh deliverable</td></tr>
+<tr><td><a href="../index.html"><code>../index.html</code></a></td><td>Galeri dan navigasi artefak</td></tr>
+<tr><td><a href="../01-Analisis-Kebutuhan/Analisis-Kebutuhan.md"><code>../01-Analisis-Kebutuhan</code></a></td><td>Analisis kebutuhan</td></tr>
+<tr><td><a href="../02-Rancangan-Sistem/Rancangan-Sistem.md"><code>../02-Rancangan-Sistem</code></a></td><td>Diagram dan penjelasan sistem</td></tr>
+<tr><td><a href="../03-Desain-UI-UX/README.md"><code>../03-Desain-UI-UX</code></a></td><td>Style guide dan 13 SVG UI/UX</td></tr>
+<tr><td><a href="../04-Pengembangan-Aplikasi/.gitkeep"><code>../04-Pengembangan-Aplikasi</code></a></td><td>Sengaja kosong</td></tr>
+<tr><td><a href="../05-Laporan-Testing/Laporan-Testing.md"><code>../05-Laporan-Testing</code></a></td><td>Laporan dan hasil pengujian</td></tr>
+<tr><td><a href="../06-Aplikasi-Final/README.md"><code>../06-Aplikasi-Final</code></a></td><td>Catatan hosting</td></tr>
+<tr><td><a href="Laporan-Akhir.md"><code>07-Laporan-Akhir.md</code></a></td><td>Laporan akhir versi Markdown</td></tr>
+<tr><td><a href="Laporan-Akhir.html"><code>Laporan-Akhir.html</code></a></td><td>Laporan akhir versi cetak</td></tr>
+</tbody></table>
+<hr>
+<p><strong>ErrorWeb — Platform Pendaftaran dan Manajemen Event (EventKita)</strong></p>
+</main>
+<footer>
+  <span>ErrorWeb &mdash; EventKita</span>
+  <span>Dokumen ini dapat dicetak langsung dari browser</span>
+</footer>
+</body>
+</html>

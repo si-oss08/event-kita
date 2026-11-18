@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ErrorWeb — EventKita</title>
+<style>
+  :root { --ink:#111; --text:#222; --mid:#555; --soft:#777; --line:#c9c9c9; --bg:#f4f4f4; }
+  * { box-sizing:border-box; }
+  body { margin:0 auto; max-width:960px; padding:48px 56px 72px; color:var(--text); background:#fff;
+    font:15px/1.65 Inter,'Segoe UI',Arial,sans-serif; }
+  header { border-bottom:3px solid var(--ink); padding-bottom:14px; margin-bottom:28px; }
+  header .eyebrow { font-size:11px; font-weight:800; letter-spacing:1.8px; color:var(--soft); text-transform:uppercase; }
+  header .brand { font-size:12px; color:var(--mid); margin-top:6px; }
+  h1,h2,h3,h4,h5,h6 { color:var(--ink); line-height:1.25; margin:28px 0 10px; }
+  h1 { font-size:28px; margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px; }
+  h2 { font-size:21px; border-left:5px solid var(--ink); padding-left:12px; }
+  h3 { font-size:17px; }
+  p { margin:10px 0; }
+  a { color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+  strong { color:var(--ink); }
+  ul,ol { margin:10px 0 10px 24px; padding:0; }
+  li { margin:5px 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:9px 11px; vertical-align:top; text-align:left; }
+  th { background:var(--ink); color:#fff; font-weight:700; }
+  tr:nth-child(even) td { background:var(--bg); }
+  pre { background:var(--bg); border:1px solid var(--line); border-left:5px solid var(--ink);
+    padding:14px 16px; overflow:auto; font:12.5px/1.55 'Cascadia Mono',Consolas,monospace; white-space:pre-wrap; }
+  code { background:var(--bg); padding:1px 5px; border-radius:3px; font-family:'Cascadia Mono',Consolas,monospace; font-size:0.92em; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:5px solid var(--ink); margin:14px 0; padding:8px 16px; background:var(--bg); color:var(--mid); }
+  footer { margin-top:48px; border-top:1px solid var(--line); padding-top:14px; font-size:11px; color:var(--soft);
+    display:flex; justify-content:space-between; gap:16px; }
+  @media print {
+    @page { size:A4; margin:16mm; }
+    body { max-width:none; padding:0; font-size:11pt; }
+    header { margin-bottom:18px; }
+    h1,h2,h3 { break-after:avoid; }
+    table,pre,blockquote { break-inside:avoid; }
+    a { color:var(--ink); }
+    footer { position:fixed; bottom:0; left:0; right:0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ErrorWeb &middot; EventKita</div>
+  <div class="brand">Platform Pendaftaran dan Manajemen Event &mdash; Dokumen Proyek</div>
+</header>
+<main>
+<h1>ErrorWeb — EventKita</h1>
+<p>Folder ini berisi kumpulan deliverable kelompok <strong>ErrorWeb</strong> untuk proyek <strong>Platform Pendaftaran dan Manajemen Event (EventKita)</strong>. Seluruh artefak disimpan di dalam repository Laravel yang sudah ada, tepatnya pada direktori <code>ErrorWeb/</code>.</p>
+<h2>Identitas Proyek</h2>
+<table>
+<thead><tr><th>Keterangan</th><th>Isi</th></tr></thead>
+<tbody>
+<tr><td>Kelompok</td><td>ErrorWeb</td></tr>
+<tr><td>Nama proyek</td><td>Platform Pendaftaran dan Manajemen Event (EventKita)</td></tr>
+<tr><td>Jenis aplikasi</td><td>Aplikasi web Laravel</td></tr>
+<tr><td>Tema desain</td><td>Hitam putih / grayscale</td></tr>
+<tr><td>Lokasi dokumentasi</td><td><code>ErrorWeb/</code> pada root repository</td></tr>
+<tr><td>Status</td><td>Dokumen dan desain selesai; aplikasi final di-hosting sendiri oleh tim</td></tr>
+</tbody></table>
+<h2>Peta Struktur</h2>
+<pre><code class="language-text">ErrorWeb/
+├── README.md                         Ringkasan seluruh deliverable
+├── index.html                        Galeri &amp; navigasi semua artefak
+├── 01-Analisis-Kebutuhan/
+│   └── Analisis-Kebutuhan.md         Latar belakang, tujuan, kebutuhan
+├── 02-Rancangan-Sistem/
+│   ├── Rancangan-Sistem.md           Penjelasan rancangan &amp; diagram
+│   ├── Rancangan-Sistem.drawio       Semua diagram dalam 1 file multi-halaman
+│   ├── 01-DFD-Konteks.svg / .drawio
+│   ├── 02-DFD-Level-0.svg / .drawio
+│   ├── 03-ERD.svg / .drawio
+│   ├── 04-Class-Diagram.svg / .drawio
+│   ├── 05-Use-Case-Diagram.svg / .drawio
+│   ├── 06-Aktivitas-Pendaftaran-Event.svg / .drawio
+│   ├── 07-Aktivitas-Verifikasi-Pendaftar.svg / .drawio
+│   ├── 08-Aktivitas-Kelola-Event.svg / .drawio
+│   └── 09-Aktivitas-Registrasi-Akun.svg / .drawio
+├── 03-Desain-UI-UX/
+│   ├── README.md                     Panduan desain &amp; daftar layar
+│   ├── 00-Style-Guide.svg
+│   ├── 01-Landing-Page.svg
+│   ├── 02-Login-Peserta.svg
+│   ├── 03-Registrasi-Peserta.svg
+│   ├── 04-Detail-Event.svg
+│   ├── 05-Dashboard-Peserta.svg
+│   ├── 06-E-Tiket.svg
+│   ├── 07-Profil-Peserta.svg
+│   ├── 08-Login-Admin.svg
+│   ├── 09-Dashboard-Admin.svg
+│   ├── 10-Form-Event.svg
+│   ├── 11-Verifikasi-Pendaftar.svg
+│   └── 12-Alur-Navigasi.svg
+├── 04-Pengembangan-Aplikasi/
+│   └── .gitkeep                      Sengaja dikosongkan
+├── 05-Laporan-Testing/
+│   ├── Laporan-Testing.md            Metode, kasus uji, temuan
+│   └── Hasil-Pengujian.md            Rekap hasil pengujian
+├── 06-Aplikasi-Final/
+│   └── README.md                     Catatan hosting &amp; akses aplikasi
+└── 07-Laporan-Akhir/
+    ├── Laporan-Akhir.md              Laporan akhir lengkap
+    └── Laporan-Akhir.html            Versi cetak / print-ready</code></pre>
+<h2>Ringkasan Fitur Aplikasi</h2>
+<ol><li>Halaman publik: daftar event berstatus <code>publish</code> dan detail event berdasarkan slug.</li><li>Autentikasi peserta: registrasi, login, logout, dan kelola profil.</li><li>Area peserta: dashboard riwayat pendaftaran, pendaftaran event, dan e-tiket.</li><li>Autentikasi admin: login dan logout menggunakan guard <code>admin</code>.</li><li>Area admin: dashboard, pembuatan serta pembaruan event, dan verifikasi pendaftar.</li></ol>
+<h2>Cara Melihat Artefak</h2>
+<ul><li>Buka <code>index.html</code> melalui browser untuk galeri seluruh SVG dan tautan dokumen.</li><li>Dokumen Markdown dapat dibaca langsung di editor atau GitHub.</li><li>Versi HTML tersedia untuk pencetakan pada <code>07-Laporan-Akhir/Laporan-Akhir.html</code> dan dokumen pendukung lainnya.</li></ul>
+<h2>Catatan Penting</h2>
+<ul><li>Folder <code>04-Pengembangan-Aplikasi/</code> sengaja tidak diisi karena kode aplikasi berada langsung di root repository Laravel.</li><li>Tidak ada video demonstrasi yang dibuat.</li><li>Folder <code>06-Aplikasi-Final/</code> hanya berisi catatan karena hosting aplikasi dilakukan sendiri oleh tim.</li><li>Seluruh desain UI/UX dibuat dalam format SVG berwarna hitam putih.</li><li>Diagram pada <code>02-Rancangan-Sistem/</code> tersedia dalam dua format: SVG untuk dilihat/dicetak dan <code>.drawio</code> untuk diedit di diagrams.net.</li></ul>
+</main>
+<footer>
+  <span>ErrorWeb &mdash; EventKita</span>
+  <span>Dokumen ini dapat dicetak langsung dari browser</span>
+</footer>
+</body>
+</html>

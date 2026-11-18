@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111111"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a8a"/>
+    </marker>
+    <marker id="arrowOpen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#111111" stroke-width="1.4"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#dddddd" stroke-width="1"/>
+    </pattern>
+    <style>text { -webkit-font-smoothing: antialiased; }</style>
+  </defs>
+  <rect width="1280" height="900" fill="#ffffff"/>
+  <text x="40" y="40" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0" opacity="1">00. Style Guide</text>
+  <text x="40" y="62" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">Acuan visual: palet grayscale, skala tipografi, komponen dasar, dan sistem spasi.</text>
+  <text x="1240" y="40" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="end" letter-spacing="1.2" opacity="1">ERRORWEB  /  EVENTKITA</text>
+  <text x="1240" y="62" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="400" fill="#8a8a8a" text-anchor="end" letter-spacing="0" opacity="1">Desain UI/UX  •  Hitam &amp; Putih  •  Desktop 1280px</text>
+  
+    <rect x="40" y="84" width="1200" height="768" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <line x1="40" y1="126" x2="1240" y2="126" stroke="#111111" stroke-width="1.2"/>
+    <circle cx="64" cy="105" r="5" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <circle cx="82" cy="105" r="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <circle cx="100" cy="105" r="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <rect x="122" y="93" width="560" height="25" rx="12" fill="#f4f4f4" stroke="#e9e9e9" stroke-width="1" opacity="1"/>
+    <circle cx="139" cy="105" r="4" fill="#8a8a8a" stroke="#8a8a8a" stroke-width="1" opacity="1"/>
+    <text x="152" y="110" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="11" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">event-kita.test/style-guide</text>
+    <text x="1216" y="111" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#b5b5b5" text-anchor="end" letter-spacing="1.4" opacity="1">PREVIEW DESAIN</text>
+  
+  
+    <text x="72" y="226" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="2.2" opacity="1">DESAIN UI/UX</text>
+    <text x="72" y="258" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Style Guide — EventKita</text>
+    <text x="72" y="282" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">Sistem desain hitam-putih: palet, tipografi, komponen, dan ritme spasi.</text>
+
+    <text x="72" y="290" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1.6" opacity="1">PALET WARNA</text>
+    
+      <rect x="72" y="296" width="132" height="64" rx="8" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+      <text x="72" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Ink</text>
+      <text x="72" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#111111</text>
+    
+      <rect x="214" y="296" width="132" height="64" rx="8" fill="#333333" stroke="#333333" stroke-width="1" opacity="1"/>
+      <text x="214" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Charcoal</text>
+      <text x="214" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#333333</text>
+    
+      <rect x="356" y="296" width="132" height="64" rx="8" fill="#555555" stroke="#555555" stroke-width="1" opacity="1"/>
+      <text x="356" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Graphite</text>
+      <text x="356" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#555555</text>
+    
+      <rect x="498" y="296" width="132" height="64" rx="8" fill="#8A8A8A" stroke="#8A8A8A" stroke-width="1" opacity="1"/>
+      <text x="498" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Muted</text>
+      <text x="498" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#8A8A8A</text>
+    
+      <rect x="640" y="296" width="132" height="64" rx="8" fill="#C9C9C9" stroke="#C9C9C9" stroke-width="1" opacity="1"/>
+      <text x="640" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Border</text>
+      <text x="640" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#C9C9C9</text>
+    
+      <rect x="782" y="296" width="132" height="64" rx="8" fill="#E9E9E9" stroke="#E9E9E9" stroke-width="1" opacity="1"/>
+      <text x="782" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Surface</text>
+      <text x="782" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#E9E9E9</text>
+    
+      <rect x="924" y="296" width="132" height="64" rx="8" fill="#F4F4F4" stroke="#F4F4F4" stroke-width="1" opacity="1"/>
+      <text x="924" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Canvas</text>
+      <text x="924" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#F4F4F4</text>
+    
+      <rect x="1066" y="296" width="132" height="64" rx="8" fill="#FFFFFF" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+      <text x="1066" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">White</text>
+      <text x="1066" y="396" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">#FFFFFF</text>
+    
+
+    <text x="72" y="448" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1.6" opacity="1">TIPOGRAFI</text>
+    <text x="72" y="490" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Temukan Event Seru</text>
+    <text x="72" y="510" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">H1  •  44 px / 800</text>
+    <text x="72" y="548" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Upcoming Events</text>
+    <text x="72" y="566" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">H2  •  24 px / 800</text>
+    <text x="72" y="602" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Dashboard Admin</text>
+    <text x="72" y="620" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">H3  •  17 px / 800</text>
+    <text x="72" y="654" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Body text digunakan untuk deskripsi dan informasi pendukung.</text>
+    <text x="72" y="672" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">Body  •  12–14 px / 400</text>
+    <text x="72" y="704" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#8a8a8a" text-anchor="start" letter-spacing="1" opacity="1">CAPTION &amp; LABEL  •  9–10 px / 700</text>
+
+    <text x="640" y="448" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1.6" opacity="1">KOMPONEN</text>
+    <rect x="640" y="464" width="150" height="42" rx="9" fill="#111111" stroke="#111111" stroke-width="1.2" opacity="1"/>
+    <text x="715" y="489.32" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">Tombol Utama</text>
+    <rect x="806" y="464" width="150" height="42" rx="9" fill="#ffffff" stroke="#111111" stroke-width="1.2" opacity="1"/>
+    <text x="881" y="489.32" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#111111" text-anchor="middle" letter-spacing="0" opacity="1">Tombol Kedua</text>
+    <rect x="962" y="456" width="170" height="58" rx="10" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <rect x="972" y="464" width="150" height="42" rx="9" fill="#ffffff" stroke="#ffffff" stroke-width="1.2" opacity="1"/>
+    <text x="1047" y="489.32" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#111111" text-anchor="middle" letter-spacing="0" opacity="1">Tombol Terang</text>
+
+    <text x="640" y="534" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="0.2" opacity="1">INPUT FIELD</text>
+    <rect x="640" y="542" width="300" height="40" rx="8" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+    
+    <text x="654" y="566.2" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">Placeholder teks...</text>
+    
+    <rect x="960" y="542" width="78" height="22" rx="11" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <text x="999" y="557" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#111111" text-anchor="middle" letter-spacing="0.8" opacity="1">PENDING</text>
+    <rect x="1046" y="542" width="86" height="22" rx="11" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <text x="1089" y="557" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.8" opacity="1">DITERIMA</text>
+    <rect x="960" y="574" width="78" height="22" rx="11" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <text x="999" y="589" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.8" opacity="1">DITOLAK</text>
+    <text x="960" y="612" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">Badge status: outline = menunggu,</text>
+    <text x="960" y="626" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">solid = final.</text>
+
+    <rect x="640" y="650" width="480" height="100" rx="12" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+    <rect x="652" y="662" width="90" height="76" rx="10" fill="#f4f4f4" stroke="#dcdcdc" stroke-width="1" opacity="1"/>
+    <path d="M652,738 L742,662" stroke="#e9e9e9" stroke-width="1"/>
+    <path d="M652,662 L742,738" stroke="#e9e9e9" stroke-width="1"/>
+    <rect x="681" y="686" width="32" height="24" rx="4" fill="#ffffff" stroke="#b5b5b5" stroke-width="1" opacity="1"/>
+    <circle cx="690" cy="695" r="3" fill="#b5b5b5" stroke="#b5b5b5" stroke-width="1" opacity="1"/>
+    <path d="M685,708 l9,-10 l7,7 l5,-4 l3,7 Z" fill="#b5b5b5"/>
+    <text x="697" y="726" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#8a8a8a" text-anchor="middle" letter-spacing="1" opacity="1">16:9</text>
+    <text x="758" y="684" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Judul Kartu Event</text>
+    <text x="758" y="704" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">12 Desember 2026  •  Jakarta</text>
+    <rect x="758" y="716" width="58" height="22" rx="11" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <text x="787" y="731" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.8" opacity="1">GRATIS</text>
+
+    <text x="72" y="744" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1.6" opacity="1">SPACING &amp; GRID</text>
+    <rect x="72" y="760" width="5.6" height="10" rx="0" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+        <text x="72" y="790" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">4 px</text><rect x="150" y="760" width="11.2" height="10" rx="0" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+        <text x="150" y="790" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">8 px</text><rect x="228" y="760" width="22.4" height="10" rx="0" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+        <text x="228" y="790" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">16 px</text><rect x="306" y="760" width="33.599999999999994" height="10" rx="0" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+        <text x="306" y="790" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">24 px</text><rect x="384" y="760" width="44.8" height="10" rx="0" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+        <text x="384" y="790" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">32 px</text><rect x="462" y="760" width="67.19999999999999" height="10" rx="0" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+        <text x="462" y="790" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">48 px</text>
+    <text x="600" y="776" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Grid 12 kolom  •  max-width 1200 px  •  gutter 24 px</text>
+    
+    <path d="M40,806 H1240 V844 Q1240,852 1232,852 H48 Q40,852 40,844 Z" fill="#111111"/>
+    <rect x="70" y="819" width="22" height="22" rx="6" fill="#ffffff" stroke="#ffffff" stroke-width="1" opacity="1"/>
+    <text x="81" y="835" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="800" fill="#111111" text-anchor="middle" letter-spacing="0" opacity="1">EK</text>
+    <text x="102" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start" letter-spacing="0" opacity="1">EventKita</text>
+    <text x="640" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="10" font-weight="400" fill="#c9c9c9" text-anchor="middle" letter-spacing="0" opacity="1">© 2026 EventKita — Platform Pendaftaran dan Manajemen Event</text>
+    <text x="1208" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#c9c9c9" text-anchor="end" letter-spacing="0" opacity="1">Kebijakan Privasi   •   Ketentuan Layanan</text>
+  
+  
+  </svg>

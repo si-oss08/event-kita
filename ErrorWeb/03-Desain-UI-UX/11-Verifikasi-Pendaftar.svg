@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111111"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a8a"/>
+    </marker>
+    <marker id="arrowOpen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#111111" stroke-width="1.4"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#dddddd" stroke-width="1"/>
+    </pattern>
+    <style>text { -webkit-font-smoothing: antialiased; }</style>
+  </defs>
+  <rect width="1280" height="900" fill="#ffffff"/>
+  <text x="40" y="40" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0" opacity="1">11. Verifikasi Pendaftar</text>
+  <text x="40" y="62" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">Admin menerima atau menolak pendaftaran. Status langsung terlihat pada e-tiket peserta.</text>
+  <text x="1240" y="40" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="end" letter-spacing="1.2" opacity="1">ERRORWEB  /  EVENTKITA</text>
+  <text x="1240" y="62" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="400" fill="#8a8a8a" text-anchor="end" letter-spacing="0" opacity="1">Desain UI/UX  •  Hitam &amp; Putih  •  Desktop 1280px</text>
+  
+    <rect x="40" y="84" width="1200" height="768" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <line x1="40" y1="126" x2="1240" y2="126" stroke="#111111" stroke-width="1.2"/>
+    <circle cx="64" cy="105" r="5" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <circle cx="82" cy="105" r="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <circle cx="100" cy="105" r="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <rect x="122" y="93" width="560" height="25" rx="12" fill="#f4f4f4" stroke="#e9e9e9" stroke-width="1" opacity="1"/>
+    <circle cx="139" cy="105" r="4" fill="#8a8a8a" stroke="#8a8a8a" stroke-width="1" opacity="1"/>
+    <text x="152" y="110" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="11" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">event-kita.test/admin/pendaftar</text>
+    <text x="1216" y="111" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#b5b5b5" text-anchor="end" letter-spacing="1.4" opacity="1">PREVIEW DESAIN</text>
+  
+  
+    <rect x="72" y="142" width="34" height="34" rx="9" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/><text x="89" y="164" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">EK</text><text x="116" y="165" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0" opacity="1">EventKita</text><line x1="72" y1="190" x2="1208" y2="190" stroke="#c9c9c9" stroke-width="1"/><text x="792" y="163" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Home</text><text x="858" y="163" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Events</text><text x="960" y="163" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Log in</text><rect x="1022" y="144" width="150" height="36" rx="9" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/><text x="1097" y="167" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">Register</text><rect x="1190" y="144" width="18" height="36" rx="6" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="0"/>
+    
+    <rect x="72" y="206" width="240" height="570" rx="16" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+    <rect x="96" y="236" width="34" height="34" rx="9" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <text x="113" y="258" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">EK</text>
+    <text x="142" y="259" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Admin Panel</text>
+    <line x1="88" y1="292" x2="296" y2="292" stroke="#e9e9e9" stroke-width="1"/>
+    <text x="106" y="332" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Dashboard</text>
+    <text x="106" y="382" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Tambah Event</text>
+    <rect x="88" y="407" width="208" height="40" rx="9" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/><text x="106" y="432" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="start" letter-spacing="0" opacity="1">Verifikasi Pendaftar</text>
+    <line x1="88" y1="620" x2="296" y2="620" stroke="#e9e9e9" stroke-width="1"/>
+    <text x="106" y="658" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Logout</text>
+    <text x="106" y="700" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">Masuk sebagai Admin</text>
+  
+    <text x="332" y="226" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="2.2" opacity="1">MANAJEMEN</text>
+    <text x="332" y="256" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Verifikasi Pendaftar</text>
+    <rect x="332" y="288" width="876" height="488" rx="16" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+    <text x="356" y="322" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Daftar Pendaftar</text>
+    <rect x="1134" y="304" width="56" height="22" rx="11" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <text x="1162" y="319" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.8" opacity="1">3 DATA</text>
+    <line x1="332" y1="340" x2="1208" y2="340" stroke="#e9e9e9" stroke-width="1"/>
+    <rect x="332" y="341" width="866" height="40" rx="0" fill="#f4f4f4" stroke="none" stroke-width="1" opacity="1"/>
+    <text x="356" y="366" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1" opacity="1">NAMA PESERTA</text>
+    <text x="620" y="366" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1" opacity="1">EVENT</text>
+    <text x="866" y="366" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1" opacity="1">STATUS</text>
+    <text x="1000" y="366" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1" opacity="1">AKSI VERIFIKASI</text>
+    <line x1="332" y1="381" x2="1208" y2="381" stroke="#e9e9e9" stroke-width="1"/>
+    
+    <text x="356" y="407" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Aisyah Putri</text>
+    <text x="356" y="423" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">EVT-AB12CD34</text>
+    <text x="620" y="411" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Konser Musik Malam</text>
+    <rect x="866" y="397" width="96" height="22" rx="11" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <text x="914" y="412" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#111111" text-anchor="middle" letter-spacing="0.8" opacity="1">PENDING</text>
+    
+      <rect x="1000" y="395" width="80" height="30" rx="7" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+      <text x="1040" y="414" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">Terima</text>
+      <rect x="1090" y="395" width="80" height="30" rx="7" fill="#ffffff" stroke="#111111" stroke-width="1" opacity="1"/>
+      <text x="1130" y="414" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Tolak</text>
+    
+    <line x1="332" y1="450" x2="1208" y2="450" stroke="#e9e9e9" stroke-width="1"/>
+  
+    <text x="356" y="477" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Budi Santoso</text>
+    <text x="356" y="493" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">EVT-KL98MN21</text>
+    <text x="620" y="481" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Workshop UI/UX</text>
+    <rect x="866" y="467" width="96" height="22" rx="11" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <text x="914" y="482" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#111111" text-anchor="middle" letter-spacing="0.8" opacity="1">PENDING</text>
+    
+      <rect x="1000" y="465" width="80" height="30" rx="7" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+      <text x="1040" y="484" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">Terima</text>
+      <rect x="1090" y="465" width="80" height="30" rx="7" fill="#ffffff" stroke="#111111" stroke-width="1" opacity="1"/>
+      <text x="1130" y="484" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">Tolak</text>
+    
+    <line x1="332" y1="520" x2="1208" y2="520" stroke="#e9e9e9" stroke-width="1"/>
+  
+    <text x="356" y="547" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="800" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Citra Dewi</text>
+    <text x="356" y="563" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="9.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">EVT-QR45ST67</text>
+    <text x="620" y="551" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Seminar Teknologi</text>
+    <rect x="866" y="537" width="96" height="22" rx="11" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <text x="914" y="552" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.8" opacity="1">DITERIMA</text>
+    <text x="1090" y="556" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-style="italic" fill="#b5b5b5" text-anchor="middle">Sudah diverifikasi</text>
+    <line x1="332" y1="590" x2="1208" y2="590" stroke="#e9e9e9" stroke-width="1"/>
+  
+    <text x="356" y="660" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#b5b5b5" text-anchor="start" letter-spacing="0" opacity="1">Verifikasi hanya tersedia untuk pendaftaran berstatus PENDING.</text>
+    <rect x="356" y="690" width="828" height="56" rx="10" fill="#f4f4f4" stroke="#e9e9e9" stroke-width="1" opacity="1"/>
+    <text x="376" y="714" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1.2" opacity="1">CATATAN</text>
+    <text x="376" y="732" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Catatan penolakan (opsional) dapat ditambahkan agar peserta mengetahui alasannya.</text>
+    
+    <path d="M40,806 H1240 V844 Q1240,852 1232,852 H48 Q40,852 40,844 Z" fill="#111111"/>
+    <rect x="70" y="819" width="22" height="22" rx="6" fill="#ffffff" stroke="#ffffff" stroke-width="1" opacity="1"/>
+    <text x="81" y="835" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="800" fill="#111111" text-anchor="middle" letter-spacing="0" opacity="1">EK</text>
+    <text x="102" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start" letter-spacing="0" opacity="1">EventKita</text>
+    <text x="640" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="10" font-weight="400" fill="#c9c9c9" text-anchor="middle" letter-spacing="0" opacity="1">© 2026 EventKita — Platform Pendaftaran dan Manajemen Event</text>
+    <text x="1208" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#c9c9c9" text-anchor="end" letter-spacing="0" opacity="1">Kebijakan Privasi   •   Ketentuan Layanan</text>
+  
+  
+  </svg>

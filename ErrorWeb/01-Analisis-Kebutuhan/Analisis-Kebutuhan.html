@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analisis Kebutuhan — EventKita</title>
+<style>
+  :root { --ink:#111; --text:#222; --mid:#555; --soft:#777; --line:#c9c9c9; --bg:#f4f4f4; }
+  * { box-sizing:border-box; }
+  body { margin:0 auto; max-width:960px; padding:48px 56px 72px; color:var(--text); background:#fff;
+    font:15px/1.65 Inter,'Segoe UI',Arial,sans-serif; }
+  header { border-bottom:3px solid var(--ink); padding-bottom:14px; margin-bottom:28px; }
+  header .eyebrow { font-size:11px; font-weight:800; letter-spacing:1.8px; color:var(--soft); text-transform:uppercase; }
+  header .brand { font-size:12px; color:var(--mid); margin-top:6px; }
+  h1,h2,h3,h4,h5,h6 { color:var(--ink); line-height:1.25; margin:28px 0 10px; }
+  h1 { font-size:28px; margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px; }
+  h2 { font-size:21px; border-left:5px solid var(--ink); padding-left:12px; }
+  h3 { font-size:17px; }
+  p { margin:10px 0; }
+  a { color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+  strong { color:var(--ink); }
+  ul,ol { margin:10px 0 10px 24px; padding:0; }
+  li { margin:5px 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:9px 11px; vertical-align:top; text-align:left; }
+  th { background:var(--ink); color:#fff; font-weight:700; }
+  tr:nth-child(even) td { background:var(--bg); }
+  pre { background:var(--bg); border:1px solid var(--line); border-left:5px solid var(--ink);
+    padding:14px 16px; overflow:auto; font:12.5px/1.55 'Cascadia Mono',Consolas,monospace; white-space:pre-wrap; }
+  code { background:var(--bg); padding:1px 5px; border-radius:3px; font-family:'Cascadia Mono',Consolas,monospace; font-size:0.92em; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:5px solid var(--ink); margin:14px 0; padding:8px 16px; background:var(--bg); color:var(--mid); }
+  footer { margin-top:48px; border-top:1px solid var(--line); padding-top:14px; font-size:11px; color:var(--soft);
+    display:flex; justify-content:space-between; gap:16px; }
+  @media print {
+    @page { size:A4; margin:16mm; }
+    body { max-width:none; padding:0; font-size:11pt; }
+    header { margin-bottom:18px; }
+    h1,h2,h3 { break-after:avoid; }
+    table,pre,blockquote { break-inside:avoid; }
+    a { color:var(--ink); }
+    footer { position:fixed; bottom:0; left:0; right:0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ErrorWeb &middot; EventKita</div>
+  <div class="brand">Platform Pendaftaran dan Manajemen Event &mdash; Dokumen Proyek</div>
+</header>
+<main>
+<h1>Analisis Kebutuhan — EventKita</h1>
+<h2>1. Latar Belakang</h2>
+<p>Penyelenggaraan event—baik seminar, workshop, maupun acara komunitas—memerlukan mekanisme pendaftaran yang rapi, transparan, dan mudah diakses. Proses yang masih dilakukan secara manual seperti melalui formulir kertas atau penyebaran tautan tanpa pengelolaan data sering menimbulkan duplikasi pendaftaran, kesulitan verifikasi, serta kurangnya informasi status bagi peserta.</p>
+<p>EventKita hadir sebagai platform web untuk mengelola siklus pendaftaran event: mulai dari publikasi event, registrasi akun peserta, pendaftaran event, penerbitan e-tiket, hingga verifikasi pendaftar oleh admin. Aplikasi dibangun menggunakan Laravel dan dokumentasi proyeknya dikumpulkan dalam folder <code>ErrorWeb/</code>.</p>
+<h2>2. Rumusan Masalah</h2>
+<ol><li>Peserta belum memiliki satu tempat untuk melihat event yang tersedia dan melakukan pendaftaran.</li><li>Penyelenggara memerlukan sarana untuk membuat, mengubah, dan mempublikasikan event.</li><li>Proses verifikasi pendaftar belum terstruktur sehingga status peserta sulit dipantau.</li><li>Peserta memerlukan bukti pendaftaran digital berupa e-tiket.</li><li>Diperlukan dokumentasi perencanaan, rancangan sistem, desain antarmuka, pengujian, dan laporan akhir sebagai artefak kelompok.</li></ol>
+<h2>3. Tujuan</h2>
+<h3>Tujuan Umum</h3>
+<p>Menyediakan platform pendaftaran dan manajemen event berbasis web yang memungkinkan peserta mendaftar secara mandiri dan admin mengelola event serta memverifikasi pendaftar dalam satu sistem.</p>
+<h3>Tujuan Khusus</h3>
+<ol><li>Menampilkan daftar event berstatus <code>publish</code> kepada publik.</li><li>Menyediakan halaman detail event lengkap dengan informasi tanggal, lokasi, kuota, harga, dan poster.</li><li>Menyediakan registrasi dan login untuk peserta.</li><li>Memungkinkan peserta mendaftar event, melihat riwayat, dan mengunduh/melihat e-tiket.</li><li>Menyediakan login khusus admin dengan guard terpisah.</li><li>Memungkinkan admin membuat dan mengubah event.</li><li>Memungkinkan admin menerima atau menolak pendaftaran disertai catatan.</li><li>Menghasilkan dokumentasi lengkap sesuai struktur folder yang diminta kelompok.</li></ol>
+<h2>4. Ruang Lingkup</h2>
+<h3>Termasuk</h3>
+<ul><li>Halaman landing dan detail event.</li><li>Autentikasi peserta dan admin.</li><li>Dashboard peserta dan profil.</li><li>Pendaftaran event dan e-tiket.</li><li>Dashboard admin, pembuatan dan pembaruan event.</li><li>Verifikasi pendaftar.</li><li>Dokumentasi analisis, rancangan sistem, desain UI/UX, pengujian, dan laporan akhir.</li></ul>
+<h3>Tidak Termasuk</h3>
+<ul><li>Pembayaran online.</li><li>Pengiriman email/SMS notifikasi.</li><li>Aplikasi mobile native.</li><li>Video demonstrasi.</li><li>Deployment/hosting aplikasi (dilakukan sendiri oleh tim).</li><li>Pengisian folder <code>04-Pengembangan-Aplikasi/</code> dengan salinan kode tambahan.</li></ul>
+<h2>5. Pemangku Kepentingan</h2>
+<table>
+<thead><tr><th>Pemangku Kepentingan</th><th>Peran</th><th>Kebutuhan Utama</th></tr></thead>
+<tbody>
+<tr><td>Peserta</td><td>Pengguna akhir</td><td>Melihat event, mendaftar, melihat tiket &amp; status</td></tr>
+<tr><td>Admin / Penyelenggara</td><td>Pengelola sistem</td><td>Membuat event, melihat pendaftar, verifikasi</td></tr>
+<tr><td>Tim ErrorWeb</td><td>Pengembang &amp; pendokumentasi</td><td>Artefak perencanaan, desain, pengujian, laporan</td></tr>
+<tr><td>Dosen / Penguji</td><td>Evaluator</td><td>Dokumen sistematis dan hasil pengujian</td></tr>
+</tbody></table>
+<h2>6. Kebutuhan Fungsional</h2>
+<table>
+<thead><tr><th>ID</th><th>Kebutuhan</th><th>Aktor</th><th>Prioritas</th></tr></thead>
+<tbody>
+<tr><td>FR-01</td><td>Sistem menampilkan daftar event berstatus <code>publish</code> di halaman utama</td><td>Publik</td><td>Tinggi</td></tr>
+<tr><td>FR-02</td><td>Sistem menampilkan detail event berdasarkan <code>slug</code></td><td>Publik</td><td>Tinggi</td></tr>
+<tr><td>FR-03</td><td>Peserta dapat membuat akun dengan nama, email, password, dan konfirmasi password</td><td>Peserta</td><td>Tinggi</td></tr>
+<tr><td>FR-04</td><td>Peserta dapat login menggunakan email dan password</td><td>Peserta</td><td>Tinggi</td></tr>
+<tr><td>FR-05</td><td>Peserta dapat logout</td><td>Peserta</td><td>Tinggi</td></tr>
+<tr><td>FR-06</td><td>Peserta dapat melihat riwayat pendaftarannya</td><td>Peserta</td><td>Tinggi</td></tr>
+<tr><td>FR-07</td><td>Peserta dapat mendaftar pada sebuah event</td><td>Peserta</td><td>Tinggi</td></tr>
+<tr><td>FR-08</td><td>Sistem menolak pendaftaran ganda pada event yang sama</td><td>Peserta</td><td>Tinggi</td></tr>
+<tr><td>FR-09</td><td>Sistem menghasilkan kode registrasi unik berformat <code>EVT-XXXXXXXX</code></td><td>Sistem</td><td>Tinggi</td></tr>
+<tr><td>FR-10</td><td>Peserta dapat melihat e-tiket berdasarkan kode registrasi</td><td>Peserta</td><td>Tinggi</td></tr>
+<tr><td>FR-11</td><td>Peserta dapat mengubah nama dan/atau password profil</td><td>Peserta</td><td>Sedang</td></tr>
+<tr><td>FR-12</td><td>Admin dapat login dengan username dan password melalui guard <code>admin</code></td><td>Admin</td><td>Tinggi</td></tr>
+<tr><td>FR-13</td><td>Admin dapat logout</td><td>Admin</td><td>Tinggi</td></tr>
+<tr><td>FR-14</td><td>Admin dapat melihat dashboard berisi total event dan daftar event terbaru miliknya</td><td>Admin</td><td>Tinggi</td></tr>
+<tr><td>FR-15</td><td>Admin dapat membuat event baru dengan validasi data dan unggahan poster</td><td>Admin</td><td>Tinggi</td></tr>
+<tr><td>FR-16</td><td>Admin dapat mengubah event miliknya sendiri</td><td>Admin</td><td>Tinggi</td></tr>
+<tr><td>FR-17</td><td>Admin dapat melihat seluruh pendaftar beserta data user dan event</td><td>Admin</td><td>Tinggi</td></tr>
+<tr><td>FR-18</td><td>Admin dapat mengubah status pendaftaran menjadi <code>diterima</code> atau <code>ditolak</code></td><td>Admin</td><td>Tinggi</td></tr>
+<tr><td>FR-19</td><td>Admin dapat menyimpan catatan saat menolak pendaftaran</td><td>Admin</td><td>Sedang</td></tr>
+<tr><td>FR-20</td><td>Sistem mencatat waktu login terakhir admin</td><td>Sistem</td><td>Sedang</td></tr>
+</tbody></table>
+<h2>7. Kebutuhan Non-Fungsional</h2>
+<table>
+<thead><tr><th>ID</th><th>Kebutuhan</th><th>Penjelasan</th></tr></thead>
+<tbody>
+<tr><td>NFR-01</td><td>Keamanan autentikasi</td><td>Password disimpan menggunakan hash; sesi diregenerasi setelah login/logout</td></tr>
+<tr><td>NFR-02</td><td>Pemisahan akses</td><td>Area peserta memakai guard <code>web</code>, area admin memakai guard <code>admin</code></td></tr>
+<tr><td>NFR-03</td><td>Validasi input</td><td>Seluruh form divalidasi di server menggunakan aturan Laravel</td></tr>
+<tr><td>NFR-04</td><td>Keunikan data</td><td>Email user, username/email admin, slug event, dan kode registrasi bersifat unik</td></tr>
+<tr><td>NFR-05</td><td>Konsistensi data</td><td>Foreign key dengan <code>onDelete('cascade')</code> antara admin–event, user–registrasi, event–registrasi</td></tr>
+<tr><td>NFR-06</td><td>Penghapusan lunak</td><td>Model <code>Admin</code>, <code>Event</code>, dan <code>Registrasi</code> menggunakan <code>SoftDeletes</code></td></tr>
+<tr><td>NFR-07</td><td>Antarmuka konsisten</td><td>Desain UI/UX hitam putih, tipografi dan komponen mengikuti style guide</td></tr>
+<tr><td>NFR-08</td><td>Responsivitas</td><td>Tampilan dirancang untuk desktop 1280 px pada artefak SVG dan mengikuti kelas responsif Tailwind di aplikasi</td></tr>
+<tr><td>NFR-09</td><td>Dokumentasi</td><td>Setiap tahap memiliki artefak yang dapat dibaca dan dicetak</td></tr>
+<tr><td>NFR-10</td><td>Pemeliharaan</td><td>Kode dan dokumentasi menggunakan struktur folder yang jelas dan nomenklatur konsisten</td></tr>
+</tbody></table>
+<h2>8. Aturan Bisnis</h2>
+<ol><li>Event hanya tampil di halaman publik jika <code>status = publish</code>.</li><li>Peserta wajib login sebelum melakukan pendaftaran.</li><li>Satu peserta hanya dapat mendaftar sekali per event.</li><li>Status awal pendaftaran adalah <code>pending</code>.</li><li>Kode registrasi dibuat otomatis dan tidak boleh duplikat.</li><li>E-tiket hanya dapat diakses oleh pemilik kode registrasi yang sedang login.</li><li>Admin hanya dapat mengedit dan memperbarui event dengan <code>admin_id</code> miliknya sendiri.</li><li>Status pendaftaran yang dapat dipilih admin adalah <code>diterima</code> atau <code>ditolak</code>.</li><li>Tanggal selesai event tidak boleh lebih awal dari tanggal mulai.</li><li>Kuota dan harga event bernilai minimal <code>1</code> dan <code>0</code> secara berturut-turut.</li></ol>
+<h2>9. Asumsi dan Kendala</h2>
+<h3>Asumsi</h3>
+<ul><li>Database MySQL tersedia dengan nama <code>event_kita</code> untuk lingkungan lokal.</li><li>Admin dan peserta sudah memiliki akun sebelum pengujian fitur area terproteksi.</li><li>Poster event berupa gambar <code>jpeg</code>, <code>png</code>, atau <code>jpg</code> dengan ukuran maksimal 2 MB.</li><li>Tim melakukan hosting aplikasi secara mandiri, sehingga folder aplikasi final tidak berisi file aplikasi.</li></ul>
+<h3>Kendala</h3>
+<ul><li>Pengujian otomatis bawaan menggunakan SQLite <code>:memory:</code> sementara konfigurasi aplikasi memakai MySQL; tanpa migrasi pada test database, test feature akan gagal.</li><li>Verifikasi visual langsung melalui screenshot tidak tersedia pada lingkungan agent, sehingga pengecekan desain dilakukan melalui validasi XML SVG dan pemeriksaan struktur.</li><li>Folder <code>04-Pengembangan-Aplikasi/</code> sengaja dikosongkan sesuai permintaan.</li></ul>
+<h2>10. Daftar Halaman</h2>
+<table>
+<thead><tr><th>No</th><th>Halaman</th><th>Route</th><th>Akses</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Landing Page</td><td><code>GET /</code></td><td>Publik</td></tr>
+<tr><td>2</td><td>Detail Event</td><td><code>GET /event/{slug}</code></td><td>Publik</td></tr>
+<tr><td>3</td><td>Login Peserta</td><td><code>GET /login</code></td><td>Publik</td></tr>
+<tr><td>4</td><td>Registrasi Peserta</td><td><code>GET /register</code></td><td>Publik</td></tr>
+<tr><td>5</td><td>Dashboard Peserta</td><td><code>GET /dashboard</code></td><td>Auth <code>web</code></td></tr>
+<tr><td>6</td><td>E-Tiket</td><td><code>GET /tiket/{kode_registrasi}</code></td><td>Auth <code>web</code></td></tr>
+<tr><td>7</td><td>Profil Peserta</td><td><code>GET /profile</code>, <code>PUT /profile</code></td><td>Auth <code>web</code></td></tr>
+<tr><td>8</td><td>Login Admin</td><td><code>GET /admin/login</code></td><td>Publik</td></tr>
+<tr><td>9</td><td>Dashboard Admin</td><td><code>GET /admin/dashboard</code></td><td>Auth <code>admin</code></td></tr>
+<tr><td>10</td><td>Form Event</td><td><code>GET /admin/events/create</code></td><td>Auth <code>admin</code></td></tr>
+<tr><td>11</td><td>Verifikasi Pendaftar</td><td><code>GET /admin/pendaftar</code></td><td>Auth <code>admin</code></td></tr>
+</tbody></table>
+<h2>11. Kebutuhan Data Ringkas</h2>
+<table>
+<thead><tr><th>Entitas</th><th>Data Utama</th></tr></thead>
+<tbody>
+<tr><td><code>users</code></td><td><code>id</code>, <code>name</code>, <code>email</code>, <code>password</code>, <code>email_verified_at</code></td></tr>
+<tr><td><code>admins</code></td><td><code>id</code>, <code>nama_admin</code>, <code>username</code>, <code>email</code>, <code>password</code>, <code>is_active</code>, <code>last_login_at</code></td></tr>
+<tr><td><code>events</code></td><td><code>id</code>, <code>admin_id</code>, <code>judul</code>, <code>slug</code>, <code>deskripsi</code>, <code>lokasi</code>, <code>tanggal_mulai</code>, <code>tanggal_selesai</code>, <code>kuota</code>, <code>harga</code>, <code>poster</code>, <code>status</code></td></tr>
+<tr><td><code>registrasis</code></td><td><code>id</code>, <code>user_id</code>, <code>event_id</code>, <code>kode_registrasi</code>, <code>status</code>, <code>catatan</code>, <code>tanggal_daftar</code></td></tr>
+</tbody></table>
+<h2>12. Prioritas Pengembangan</h2>
+<ul><li><strong>Must have:</strong> FR-01 sampai FR-10, FR-12 sampai FR-15, FR-17, FR-18.</li><li><strong>Should have:</strong> FR-11, FR-16, FR-19, FR-20.</li><li><strong>Could have:</strong> Peningkatan validasi kuota, notifikasi, dan statistik lanjutan.</li><li><strong>Won't have (saat ini):</strong> Pembayaran, notifikasi email, aplikasi mobile, video demo.</li></ul>
+</main>
+<footer>
+  <span>ErrorWeb &mdash; EventKita</span>
+  <span>Dokumen ini dapat dicetak langsung dari browser</span>
+</footer>
+</body>
+</html>

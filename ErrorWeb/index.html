@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ErrorWeb — Galeri Artefak EventKita</title>
+<style>
+  :root {
+    --ink:#111; --text:#222; --mid:#555; --soft:#8a8a8a;
+    --line:#c9c9c9; --bg:#f4f4f4; --fill2:#e9e9e9;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:#fff; color:var(--text);
+    font:15px/1.6 Inter,'Segoe UI',Arial,sans-serif;
+  }
+  header {
+    background:var(--ink); color:#fff; padding:38px 32px 30px;
+  }
+  header .wrap { max-width:1180px; margin:0 auto; }
+  .eyebrow { font-size:11px; font-weight:800; letter-spacing:2px; color:#bdbdbd; text-transform:uppercase; }
+  h1 { margin:8px 0 6px; font-size:30px; line-height:1.2; color:#fff; }
+  header p { margin:0; color:#d5d5d5; font-size:14px; max-width:760px; }
+  .badges { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .badge { border:1px solid #777; border-radius:999px; padding:5px 12px; font-size:11px; font-weight:700; color:#eee; }
+  nav {
+    position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--line);
+  }
+  nav .wrap { max-width:1180px; margin:0 auto; padding:12px 32px; display:flex; flex-wrap:wrap; gap:18px; }
+  nav a { color:var(--mid); text-decoration:none; font-size:13px; font-weight:600; }
+  nav a:hover { color:var(--ink); text-decoration:underline; }
+  main { max-width:1180px; margin:0 auto; padding:36px 32px 64px; }
+  section { margin-bottom:52px; }
+  h2 { font-size:22px; color:var(--ink); border-left:5px solid var(--ink); padding-left:12px; margin:0 0 6px; }
+  .section-note { color:var(--soft); font-size:13px; margin:0 0 20px 17px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:18px; }
+  .grid.docs { grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); }
+  a.card {
+    display:block; border:1px solid var(--line); text-decoration:none; color:inherit; background:#fff;
+    border-radius:10px; overflow:hidden; transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  a.card:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,.10); border-color:var(--ink); }
+  .thumb { height:150px; background:var(--bg); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .thumb img { width:100%; height:100%; object-fit:contain; object-position:top center; }
+  .card-body { padding:13px 15px 15px; }
+  .card-title { font-weight:800; color:var(--ink); font-size:14px; line-height:1.35; }
+  .card-meta { margin-top:5px; color:var(--soft); font-size:11.5px; }
+  .doc-card { padding:18px; }
+  .doc-card .card-title { font-size:15px; }
+  .doc-card p { margin:8px 0 0; font-size:13px; color:var(--mid); }
+  .pill { display:inline-block; margin-top:12px; border:1px solid var(--ink); border-radius:999px; padding:4px 10px; font-size:10.5px; font-weight:800; color:var(--ink); }
+  .pill.gray { border-color:var(--line); color:var(--soft); }
+  .note { border:1px solid var(--line); background:var(--bg); border-radius:10px; padding:18px 20px; font-size:13.5px; color:var(--mid); }
+  .note strong { color:var(--ink); }
+  footer { border-top:1px solid var(--line); padding:22px 32px 30px; text-align:center; color:var(--soft); font-size:12px; }
+  @media print {
+    nav { display:none; }
+    header { background:#fff; color:var(--ink); border-bottom:2px solid var(--ink); }
+    h1, header p { color:var(--ink); }
+    .badge { color:var(--ink); border-color:var(--line); }
+    body { font-size:11pt; }
+    a.card { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Kelompok ErrorWeb &middot; Dokumen Proyek</div>
+    <h1>Platform Pendaftaran dan Manajemen Event — EventKita</h1>
+    <p>Galeri seluruh artefak: analisis kebutuhan, rancangan sistem, desain UI/UX hitam putih, hasil pengujian, aplikasi final, dan laporan akhir.</p>
+    <div class="badges">
+      <span class="badge">Laravel</span>
+      <span class="badge">22 SVG valid</span>
+      <span class="badge">10 Draw.io valid</span>
+      <span class="badge">Hitam &amp; Putih</span>
+      <span class="badge">Tanpa video demo</span>
+      <span class="badge">Hosting mandiri</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#dokumen">Dokumen</a>
+    <a href="#rancangan">Rancangan Sistem</a>
+    <a href="#drawio">File Draw.io</a>
+    <a href="#uiux">Desain UI/UX</a>
+    <a href="#pengujian">Pengujian</a>
+    <a href="#catatan">Catatan</a>
+  </div>
+</nav>
+
+<main>
+  <section id="dokumen">
+    <h2>Dokumen Utama</h2>
+    <p class="section-note">Versi Markdown untuk diedit dan versi HTML untuk dibaca/dicetak.</p>
+    <div class="grid docs">
+      <a class="card doc-card" href="README.html">
+        <div class="card-title">Ringkasan Deliverable</div>
+        <p>Peta struktur folder, identitas proyek, dan ringkasan fitur.</p>
+        <span class="pill">HTML</span>
+      </a>
+      <a class="card doc-card" href="01-Analisis-Kebutuhan/Analisis-Kebutuhan.html">
+        <div class="card-title">Analisis Kebutuhan</div>
+        <p>Latar belakang, tujuan, aktor, kebutuhan fungsional, dan aturan bisnis.</p>
+        <span class="pill">HTML</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/Rancangan-Sistem.html">
+        <div class="card-title">Rancangan Sistem</div>
+        <p>DFD, ERD, class diagram, use case, activity diagram, dan validasi.</p>
+        <span class="pill">HTML</span>
+      </a>
+      <a class="card doc-card" href="03-Desain-UI-UX/README.html">
+        <div class="card-title">Desain UI/UX</div>
+        <p>Style guide monokrom dan daftar 13 artefak layar.</p>
+        <span class="pill">HTML</span>
+      </a>
+      <a class="card doc-card" href="05-Laporan-Testing/Laporan-Testing.html">
+        <div class="card-title">Laporan Testing</div>
+        <p>Metode, kasus uji, hasil, dan delapan temuan perbaikan.</p>
+        <span class="pill">HTML</span>
+      </a>
+      <a class="card doc-card" href="05-Laporan-Testing/Hasil-Pengujian.html">
+        <div class="card-title">Hasil Pengujian</div>
+        <p>Rekap ringkas smoke test, Pest, validasi SVG, dan prioritas temuan.</p>
+        <span class="pill">HTML</span>
+      </a>
+      <a class="card doc-card" href="06-Aplikasi-Final/README.html">
+        <div class="card-title">Aplikasi Final</div>
+        <p>Catatan hosting dan langkah deployment mandiri.</p>
+        <span class="pill gray">Catatan</span>
+      </a>
+      <a class="card doc-card" href="07-Laporan-Akhir/Laporan-Akhir.html">
+        <div class="card-title">Laporan Akhir</div>
+        <p>Ringkasan lengkap proyek, hasil pengujian, kesimpulan, dan saran.</p>
+        <span class="pill">Print-ready</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="rancangan">
+    <h2>Rancangan Sistem</h2>
+    <p class="section-note">Klik kartu untuk membuka SVG ukuran penuh.</p>
+    <div class="grid">
+      <a class="card" href="02-Rancangan-Sistem/01-DFD-Konteks.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/01-DFD-Konteks.svg" alt="DFD Konteks" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">01 · DFD Konteks</div><div class="card-meta">Sistem sebagai satu proses</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/02-DFD-Level-0.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/02-DFD-Level-0.svg" alt="DFD Level 0" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">02 · DFD Level 0</div><div class="card-meta">P1–P5 dan D1–D4</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/03-ERD.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/03-ERD.svg" alt="ERD" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">03 · ERD</div><div class="card-meta">users, admins, events, registrasis</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/04-Class-Diagram.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/04-Class-Diagram.svg" alt="Class Diagram" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">04 · Class Diagram</div><div class="card-meta">Controller, model, relasi</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/05-Use-Case-Diagram.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/05-Use-Case-Diagram.svg" alt="Use Case Diagram" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">05 · Use Case</div><div class="card-meta">Peserta dan admin</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/06-Aktivitas-Pendaftaran-Event.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/06-Aktivitas-Pendaftaran-Event.svg" alt="Aktivitas Pendaftaran Event" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">06 · Aktivitas Pendaftaran</div><div class="card-meta">Alur peserta</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/07-Aktivitas-Verifikasi-Pendaftar.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/07-Aktivitas-Verifikasi-Pendaftar.svg" alt="Aktivitas Verifikasi Pendaftar" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">07 · Aktivitas Verifikasi</div><div class="card-meta">Terima / tolak pendaftar</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/08-Aktivitas-Kelola-Event.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/08-Aktivitas-Kelola-Event.svg" alt="Aktivitas Kelola Event" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">08 · Aktivitas Kelola Event</div><div class="card-meta">Buat / ubah event</div></div>
+      </a>
+      <a class="card" href="02-Rancangan-Sistem/09-Aktivitas-Registrasi-Akun.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="02-Rancangan-Sistem/09-Aktivitas-Registrasi-Akun.svg" alt="Aktivitas Registrasi Akun" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">09 · Aktivitas Registrasi</div><div class="card-meta">Buat akun peserta</div></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="drawio">
+    <h2>File Draw.io — Diagram dapat Diedit</h2>
+    <p class="section-note">Format XML tidak terkompresi; buka dengan diagrams.net / draw.io.</p>
+    <div class="grid docs">
+      <a class="card doc-card" href="02-Rancangan-Sistem/Rancangan-Sistem.drawio">
+        <div class="card-title">Rancangan-Sistem.drawio</div>
+        <p>Semua 9 diagram dalam satu file multi-halaman.</p>
+        <span class="pill">9 tab</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/01-DFD-Konteks.drawio">
+        <div class="card-title">01 · DFD Konteks.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/02-DFD-Level-0.drawio">
+        <div class="card-title">02 · DFD Level 0.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/03-ERD.drawio">
+        <div class="card-title">03 · ERD.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/04-Class-Diagram.drawio">
+        <div class="card-title">04 · Class Diagram.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/05-Use-Case-Diagram.drawio">
+        <div class="card-title">05 · Use Case.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/06-Aktivitas-Pendaftaran-Event.drawio">
+        <div class="card-title">06 · Aktivitas Pendaftaran.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/07-Aktivitas-Verifikasi-Pendaftar.drawio">
+        <div class="card-title">07 · Aktivitas Verifikasi.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/08-Aktivitas-Kelola-Event.drawio">
+        <div class="card-title">08 · Aktivitas Kelola Event.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+      <a class="card doc-card" href="02-Rancangan-Sistem/09-Aktivitas-Registrasi-Akun.drawio">
+        <div class="card-title">09 · Aktivitas Registrasi.drawio</div><p>File per diagram.</p><span class="pill gray">Draw.io</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="uiux">
+    <h2>Desain UI/UX — Hitam Putih</h2>
+    <p class="section-note">13 artefak: style guide, 11 layar aplikasi, dan alur navigasi.</p>
+    <div class="grid">
+      <a class="card" href="03-Desain-UI-UX/00-Style-Guide.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/00-Style-Guide.svg" alt="Style Guide" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">00 · Style Guide</div><div class="card-meta">Warna, font, komponen</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/01-Landing-Page.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/01-Landing-Page.svg" alt="Landing Page" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">01 · Landing Page</div><div class="card-meta">Daftar event publish</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/02-Login-Peserta.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/02-Login-Peserta.svg" alt="Login Peserta" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">02 · Login Peserta</div><div class="card-meta">Email &amp; password</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/03-Registrasi-Peserta.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/03-Registrasi-Peserta.svg" alt="Registrasi Peserta" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">03 · Registrasi Peserta</div><div class="card-meta">Buat akun baru</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/04-Detail-Event.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/04-Detail-Event.svg" alt="Detail Event" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">04 · Detail Event</div><div class="card-meta">Info &amp; tombol daftar</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/05-Dashboard-Peserta.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/05-Dashboard-Peserta.svg" alt="Dashboard Peserta" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">05 · Dashboard Peserta</div><div class="card-meta">Riwayat pendaftaran</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/06-E-Tiket.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/06-E-Tiket.svg" alt="E-Tiket" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">06 · E-Tiket</div><div class="card-meta">Kode registrasi</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/07-Profil-Peserta.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/07-Profil-Peserta.svg" alt="Profil Peserta" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">07 · Profil Peserta</div><div class="card-meta">Nama &amp; password</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/08-Login-Admin.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/08-Login-Admin.svg" alt="Login Admin" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">08 · Login Admin</div><div class="card-meta">Guard admin</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/09-Dashboard-Admin.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/09-Dashboard-Admin.svg" alt="Dashboard Admin" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">09 · Dashboard Admin</div><div class="card-meta">Statistik &amp; event</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/10-Form-Event.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/10-Form-Event.svg" alt="Form Event" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">10 · Form Event</div><div class="card-meta">Input &amp; poster</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/11-Verifikasi-Pendaftar.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/11-Verifikasi-Pendaftar.svg" alt="Verifikasi Pendaftar" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">11 · Verifikasi Pendaftar</div><div class="card-meta">Terima / tolak</div></div>
+      </a>
+      <a class="card" href="03-Desain-UI-UX/12-Alur-Navigasi.svg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="03-Desain-UI-UX/12-Alur-Navigasi.svg" alt="Alur Navigasi" loading="lazy"></div>
+        <div class="card-body"><div class="card-title">12 · Alur Navigasi</div><div class="card-meta">Publik, peserta, admin</div></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="pengujian">
+    <h2>Pengujian</h2>
+    <p class="section-note">Ringkasan dan laporan lengkap hasil pengujian aplikasi.</p>
+    <div class="grid docs">
+      <a class="card doc-card" href="05-Laporan-Testing/Hasil-Pengujian.html">
+        <div class="card-title">Hasil Pengujian</div>
+        <p>9/9 smoke test lulus, 1/2 Pest lulus, 22/22 SVG valid.</p>
+        <span class="pill">HTML</span>
+      </a>
+      <a class="card doc-card" href="05-Laporan-Testing/Laporan-Testing.html">
+        <div class="card-title">Laporan Lengkap</div>
+        <p>Detail metode, tabel kasus uji, error, dan rekomendasi perbaikan.</p>
+        <span class="pill">HTML</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="catatan">
+    <h2>Catatan Struktur</h2>
+    <p class="section-note">Keputusan pengisian folder sesuai permintaan kelompok.</p>
+    <div class="note">
+      <p><strong>04-Pengembangan-Aplikasi</strong> sengaja dikosongkan (hanya <code>.gitkeep</code>) karena kode sumber berada langsung di root repository Laravel.</p>
+      <p><strong>06-Aplikasi-Final</strong> hanya berisi catatan karena hosting dilakukan sendiri oleh tim. Tidak dibuat video demonstrasi.</p>
+      <p><strong>Seluruh SVG</strong> pada folder 02 dan 03 telah divalidasi sebagai XML dan menggunakan palet hitam putih.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  ErrorWeb &middot; Platform Pendaftaran dan Manajemen Event (EventKita)
+</footer>
+</body>
+</html>

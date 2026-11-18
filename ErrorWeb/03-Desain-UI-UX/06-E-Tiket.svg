@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111111"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a8a"/>
+    </marker>
+    <marker id="arrowOpen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#111111" stroke-width="1.4"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#dddddd" stroke-width="1"/>
+    </pattern>
+    <style>text { -webkit-font-smoothing: antialiased; }</style>
+  </defs>
+  <rect width="1280" height="900" fill="#ffffff"/>
+  <text x="40" y="40" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0" opacity="1">06. E-Tiket Peserta</text>
+  <text x="40" y="62" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8a8a8a" text-anchor="start" letter-spacing="0" opacity="1">Tiket digital berisi kode registrasi unik, status verifikasi, dan informasi event.</text>
+  <text x="1240" y="40" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="end" letter-spacing="1.2" opacity="1">ERRORWEB  /  EVENTKITA</text>
+  <text x="1240" y="62" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="400" fill="#8a8a8a" text-anchor="end" letter-spacing="0" opacity="1">Desain UI/UX  •  Hitam &amp; Putih  •  Desktop 1280px</text>
+  
+    <rect x="40" y="84" width="1200" height="768" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.6" opacity="1"/>
+    <line x1="40" y1="126" x2="1240" y2="126" stroke="#111111" stroke-width="1.2"/>
+    <circle cx="64" cy="105" r="5" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <circle cx="82" cy="105" r="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <circle cx="100" cy="105" r="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1" opacity="1"/>
+    <rect x="122" y="93" width="560" height="25" rx="12" fill="#f4f4f4" stroke="#e9e9e9" stroke-width="1" opacity="1"/>
+    <circle cx="139" cy="105" r="4" fill="#8a8a8a" stroke="#8a8a8a" stroke-width="1" opacity="1"/>
+    <text x="152" y="110" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="11" font-weight="400" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">event-kita.test/tiket/EVT-AB12CD34</text>
+    <text x="1216" y="111" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="700" fill="#b5b5b5" text-anchor="end" letter-spacing="1.4" opacity="1">PREVIEW DESAIN</text>
+  
+  
+    <rect x="72" y="142" width="34" height="34" rx="9" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/><text x="89" y="164" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">EK</text><text x="116" y="165" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0" opacity="1">EventKita</text><line x1="72" y1="190" x2="1208" y2="190" stroke="#c9c9c9" stroke-width="1"/><text x="792" y="163" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Home</text><text x="858" y="163" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Events</text><text x="958" y="163" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0" opacity="1">Dashboard</text><text x="1060" y="163" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#555555" text-anchor="start" letter-spacing="0" opacity="1">Logout</text><rect x="1132" y="144" width="36" height="36" rx="9" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/><circle cx="1149" cy="164" r="9" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/><circle cx="1154" cy="160" r="9" fill="#ffffff" stroke="#ffffff" stroke-width="1" opacity="1"/>
+    <text x="640" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="middle" letter-spacing="2.4" opacity="1">EVENTKITA</text>
+    <text x="640" y="258" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="0" opacity="1">E-Ticket Kamu</text>
+    <text x="640" y="282" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Tunjukkan tiket ini kepada panitia saat hari-H.</text>
+    <rect x="350" y="300" width="580" height="430" rx="20" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+    <path d="M370,300 H910 A20,20 0 0 1 930,320 V410 H350 V320 A20,20 0 0 1 370,300 Z" fill="#111111"/>
+    <circle cx="470" cy="348" r="100" fill="none" stroke="#2f2f2f" stroke-width="1" opacity="1"/>
+    <circle cx="810" cy="378" r="70" fill="none" stroke="#2f2f2f" stroke-width="1" opacity="1"/>
+    <text x="640" y="340" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#c9c9c9" text-anchor="middle" letter-spacing="2.2" opacity="1">OFFICIAL E-TICKET</text>
+    <text x="640" y="372" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0" opacity="1">Konser Musik Malam</text>
+    <text x="640" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="400" fill="#c9c9c9" text-anchor="middle" letter-spacing="0" opacity="1">Sabtu, 12 Desember 2026  •  09:00 WIB</text>
+    <line x1="362" y1="410" x2="918" y2="410" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="5 5"/>
+    <circle cx="350" cy="410" r="13" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+    <circle cx="930" cy="410" r="13" fill="#ffffff" stroke="#c9c9c9" stroke-width="1" opacity="1"/>
+
+    <text x="390" y="452" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="700" fill="#b5b5b5" text-anchor="start" letter-spacing="1.1" opacity="1">NAMA PESERTA</text>
+    <text x="390" y="474" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Aisyah Putri</text>
+    <text x="690" y="452" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="700" fill="#b5b5b5" text-anchor="start" letter-spacing="1.1" opacity="1">STATUS</text>
+    <rect x="690" y="460" width="108" height="22" rx="11" fill="#111111" stroke="#111111" stroke-width="1" opacity="1"/>
+    <text x="744" y="475" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.8" opacity="1">TERVERIFIKASI</text>
+    <text x="390" y="516" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="700" fill="#b5b5b5" text-anchor="start" letter-spacing="1.1" opacity="1">LOKASI</text>
+    <text x="390" y="538" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Gedung Serbaguna, Jakarta</text>
+    <text x="690" y="516" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="700" fill="#b5b5b5" text-anchor="start" letter-spacing="1.1" opacity="1">HARGA</text>
+    <text x="690" y="538" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#222222" text-anchor="start" letter-spacing="0" opacity="1">Gratis</text>
+
+    <rect x="390" y="558" width="500" height="118" rx="12" fill="#f4f4f4" stroke="#111111" stroke-width="1" stroke-dasharray="6 5" opacity="1"/>
+    <text x="640" y="586" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#555555" text-anchor="middle" letter-spacing="2" opacity="1">KODE REGISTRASI</text>
+    <text x="640" y="620" font-family="'Cascadia Mono', 'Consolas', monospace" font-size="27" font-weight="800" fill="#222222" text-anchor="middle" letter-spacing="1" opacity="1">EVT-AB12CD34</text>
+    <rect x="552" y="622" width="3" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="557.2" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="562.4" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="567.6" y="634" width="1.6" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="572.8" y="622" width="1.6" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="578" y="628" width="3" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="583.2" y="634" width="1.6" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="588.4" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="593.6" y="622" width="1.6" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="598.8" y="634" width="1.6" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="604" y="628" width="3" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="609.2" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="614.4" y="622" width="1.6" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="619.6" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="624.8" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="630" y="634" width="3" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="635.2" y="622" width="1.6" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="640.4" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="645.6" y="634" width="1.6" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="650.8" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="656" y="622" width="3" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="661.2" y="634" width="1.6" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="666.4" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="671.6" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="676.8" y="622" width="1.6" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="682" y="628" width="3" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="687.2" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="692.4" y="634" width="1.6" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="697.6" y="622" width="1.6" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="702.8" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="708" y="634" width="3" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="713.2" y="628" width="1.6" height="24" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="718.4" y="622" width="1.6" height="30" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/><rect x="723.6" y="634" width="1.6" height="18" rx="0" fill="#111111" stroke="none" stroke-width="1" opacity="1"/>
+    <text x="640" y="664" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8a8a" text-anchor="middle" letter-spacing="0" opacity="1">Tunjukkan kode ini di meja registrasi</text>
+
+    <text x="640" y="768" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="middle" letter-spacing="0" opacity="1">←  Kembali ke Dashboard</text>
+    
+    <path d="M40,806 H1240 V844 Q1240,852 1232,852 H48 Q40,852 40,844 Z" fill="#111111"/>
+    <rect x="70" y="819" width="22" height="22" rx="6" fill="#ffffff" stroke="#ffffff" stroke-width="1" opacity="1"/>
+    <text x="81" y="835" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="8" font-weight="800" fill="#111111" text-anchor="middle" letter-spacing="0" opacity="1">EK</text>
+    <text x="102" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start" letter-spacing="0" opacity="1">EventKita</text>
+    <text x="640" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="10" font-weight="400" fill="#c9c9c9" text-anchor="middle" letter-spacing="0" opacity="1">© 2026 EventKita — Platform Pendaftaran dan Manajemen Event</text>
+    <text x="1208" y="834" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="400" fill="#c9c9c9" text-anchor="end" letter-spacing="0" opacity="1">Kebijakan Privasi   •   Ketentuan Layanan</text>
+  
+  
+  </svg>

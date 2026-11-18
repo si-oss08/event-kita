@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rancangan Sistem — EventKita</title>
+<style>
+  :root { --ink:#111; --text:#222; --mid:#555; --soft:#777; --line:#c9c9c9; --bg:#f4f4f4; }
+  * { box-sizing:border-box; }
+  body { margin:0 auto; max-width:960px; padding:48px 56px 72px; color:var(--text); background:#fff;
+    font:15px/1.65 Inter,'Segoe UI',Arial,sans-serif; }
+  header { border-bottom:3px solid var(--ink); padding-bottom:14px; margin-bottom:28px; }
+  header .eyebrow { font-size:11px; font-weight:800; letter-spacing:1.8px; color:var(--soft); text-transform:uppercase; }
+  header .brand { font-size:12px; color:var(--mid); margin-top:6px; }
+  h1,h2,h3,h4,h5,h6 { color:var(--ink); line-height:1.25; margin:28px 0 10px; }
+  h1 { font-size:28px; margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px; }
+  h2 { font-size:21px; border-left:5px solid var(--ink); padding-left:12px; }
+  h3 { font-size:17px; }
+  p { margin:10px 0; }
+  a { color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+  strong { color:var(--ink); }
+  ul,ol { margin:10px 0 10px 24px; padding:0; }
+  li { margin:5px 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:9px 11px; vertical-align:top; text-align:left; }
+  th { background:var(--ink); color:#fff; font-weight:700; }
+  tr:nth-child(even) td { background:var(--bg); }
+  pre { background:var(--bg); border:1px solid var(--line); border-left:5px solid var(--ink);
+    padding:14px 16px; overflow:auto; font:12.5px/1.55 'Cascadia Mono',Consolas,monospace; white-space:pre-wrap; }
+  code { background:var(--bg); padding:1px 5px; border-radius:3px; font-family:'Cascadia Mono',Consolas,monospace; font-size:0.92em; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:5px solid var(--ink); margin:14px 0; padding:8px 16px; background:var(--bg); color:var(--mid); }
+  footer { margin-top:48px; border-top:1px solid var(--line); padding-top:14px; font-size:11px; color:var(--soft);
+    display:flex; justify-content:space-between; gap:16px; }
+  @media print {
+    @page { size:A4; margin:16mm; }
+    body { max-width:none; padding:0; font-size:11pt; }
+    header { margin-bottom:18px; }
+    h1,h2,h3 { break-after:avoid; }
+    table,pre,blockquote { break-inside:avoid; }
+    a { color:var(--ink); }
+    footer { position:fixed; bottom:0; left:0; right:0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ErrorWeb &middot; EventKita</div>
+  <div class="brand">Platform Pendaftaran dan Manajemen Event &mdash; Dokumen Proyek</div>
+</header>
+<main>
+<h1>Rancangan Sistem — EventKita</h1>
+<p>Dokumen ini menjelaskan rancangan sistem EventKita berdasarkan implementasi Laravel pada repository. Seluruh diagram disajikan dalam dua format: SVG hitam putih untuk dilihat/dicetak dan <code>.drawio</code> untuk diedit di diagrams.net. File <a href="Rancangan-Sistem.drawio"><code>Rancangan-Sistem.drawio</code></a> berisi semua diagram dalam satu file multi-halaman; tersedia juga file <code>.drawio</code> per diagram.</p>
+<h2>1. Arsitektur Umum</h2>
+<p>EventKita menggunakan arsitektur web tiga lapis sederhana:</p>
+<table>
+<thead><tr><th>Lapisan</th><th>Komponen</th><th>Tanggung Jawab</th></tr></thead>
+<tbody>
+<tr><td>Tampilan</td><td>Blade + Tailwind CSS</td><td>Halaman publik, area peserta, area admin</td></tr>
+<tr><td>Kontrol</td><td><code>AuthController</code>, <code>EventController</code>, <code>RegistrasiController</code></td><td>Memproses request, validasi, pengalihan respons</td></tr>
+<tr><td>Model</td><td><code>User</code>, <code>Admin</code>, <code>Event</code>, <code>Registrasi</code></td><td>Relasi Eloquent dan akses database</td></tr>
+<tr><td>Data</td><td>MySQL <code>event_kita</code></td><td>Menyimpan akun, event, dan pendaftaran</td></tr>
+</tbody></table>
+<p>Alur umum: browser mengirim request → route Laravel → middleware autentikasi → controller → model → database → view/redirect.</p>
+<h2>2. Struktur Modul</h2>
+<table>
+<thead><tr><th>Modul</th><th>Route Utama</th><th>Controller</th></tr></thead>
+<tbody>
+<tr><td>Publik</td><td><code>/</code>, <code>/event/{slug}</code></td><td><code>EventController@index</code>, <code>EventController@show</code></td></tr>
+<tr><td>Autentikasi Peserta</td><td><code>/login</code>, <code>/register</code>, <code>/logout</code></td><td><code>AuthController</code></td></tr>
+<tr><td>Area Peserta</td><td><code>/dashboard</code>, <code>/daftar-event/{id}</code>, <code>/tiket/{kode}</code>, <code>/profile</code></td><td><code>RegistrasiController</code>, <code>AuthController</code></td></tr>
+<tr><td>Autentikasi Admin</td><td><code>/admin/login</code>, <code>/admin/logout</code></td><td><code>AuthController</code></td></tr>
+<tr><td>Area Admin</td><td><code>/admin/dashboard</code>, <code>/admin/events/*</code>, <code>/admin/pendaftar</code></td><td><code>EventController</code>, <code>RegistrasiController</code></td></tr>
+</tbody></table>
+<h2>3. DFD Konteks</h2>
+<p>Diagram: <a href="01-DFD-Konteks.svg"><code>01-DFD-Konteks.svg</code></a></p>
+<p>DFD konteks memetakan seluruh sistem sebagai satu proses bernomor <code>0</code>.</p>
+<table>
+<thead><tr><th>Entitas Eksternal</th><th>Aliran Masuk ke Sistem</th><th>Aliran Keluar dari Sistem</th></tr></thead>
+<tbody>
+<tr><td>Peserta</td><td>Data registrasi akun, kredensial login, data pendaftaran event</td><td>Informasi event, e-tiket, status pendaftaran</td></tr>
+<tr><td>Admin</td><td>Data event, keputusan verifikasi</td><td>Daftar pendaftar, rekap event, notifikasi hasil</td></tr>
+</tbody></table>
+<h2>4. DFD Level 0</h2>
+<p>Diagram: <a href="02-DFD-Level-0.svg"><code>02-DFD-Level-0.svg</code></a></p>
+<p>Sistem didekomposisi menjadi lima proses:</p>
+<table>
+<thead><tr><th>Proses</th><th>Nama</th><th>Penjelasan</th></tr></thead>
+<tbody>
+<tr><td>P1</td><td>Autentikasi &amp; Akun</td><td>Registrasi, login, logout, dan pembaruan profil</td></tr>
+<tr><td>P2</td><td>Kelola Event</td><td>Membuat dan memperbarui event oleh admin</td></tr>
+<tr><td>P3</td><td>Pendaftaran Event</td><td>Membuat registrasi peserta dengan status awal <code>pending</code></td></tr>
+<tr><td>P4</td><td>Verifikasi Pendaftar</td><td>Mengubah status menjadi <code>diterima</code> atau <code>ditolak</code></td></tr>
+<tr><td>P5</td><td>Informasi &amp; E-Tiket</td><td>Menampilkan daftar event, detail, riwayat, dan tiket</td></tr>
+</tbody></table>
+<p>Penyimpanan data:</p>
+<table>
+<thead><tr><th>ID</th><th>Tabel</th><th>Isi</th></tr></thead>
+<tbody>
+<tr><td>D1</td><td><code>users</code></td><td>Akun peserta</td></tr>
+<tr><td>D2</td><td><code>admins</code></td><td>Akun admin</td></tr>
+<tr><td>D3</td><td><code>events</code></td><td>Data event</td></tr>
+<tr><td>D4</td><td><code>registrasis</code></td><td>Data pendaftaran</td></tr>
+</tbody></table>
+<h2>5. ERD</h2>
+<p>Diagram: <a href="03-ERD.svg"><code>03-ERD.svg</code></a></p>
+<h3>Entitas dan Atribut</h3>
+<ul><li><strong>users</strong>: <code>id</code> (PK), <code>name</code>, <code>email</code> (unique), <code>email_verified_at</code>, <code>password</code>, <code>remember_token</code>, <code>created_at</code>, <code>updated_at</code>.</li><li><strong>admins</strong>: <code>id</code> (PK), <code>nama_admin</code>, <code>username</code> (unique), <code>email</code> (unique), <code>password</code>, <code>is_active</code>, <code>last_login_at</code>, <code>created_at</code>, <code>updated_at</code>, <code>deleted_at</code>.</li><li><strong>events</strong>: <code>id</code> (PK), <code>admin_id</code> (FK), <code>judul</code>, <code>slug</code> (unique), <code>deskripsi</code>, <code>lokasi</code>, <code>tanggal_mulai</code>, <code>tanggal_selesai</code>, <code>kuota</code>, <code>harga</code>, <code>poster</code>, <code>status</code>, <code>created_at</code>, <code>updated_at</code>, <code>deleted_at</code>.</li><li><strong>registrasis</strong>: <code>id</code> (PK), <code>user_id</code> (FK), <code>event_id</code> (FK), <code>kode_registrasi</code> (unique), <code>status</code>, <code>catatan</code>, <code>tanggal_daftar</code>, <code>created_at</code>, <code>updated_at</code>, <code>deleted_at</code>.</li></ul>
+<h3>Relasi</h3>
+<table>
+<thead><tr><th>Relasi</th><th>Kardinalitas</th><th>Foreign Key</th></tr></thead>
+<tbody>
+<tr><td>Admin → Event</td><td>1 : N</td><td><code>events.admin_id</code> → <code>admins.id</code></td></tr>
+<tr><td>User → Registrasi</td><td>1 : N</td><td><code>registrasis.user_id</code> → <code>users.id</code></td></tr>
+<tr><td>Event → Registrasi</td><td>1 : N</td><td><code>registrasis.event_id</code> → <code>events.id</code></td></tr>
+</tbody></table>
+<p>Semua foreign key menggunakan <code>onDelete('cascade')</code>. Model <code>Admin</code>, <code>Event</code>, dan <code>Registrasi</code> menggunakan soft delete.</p>
+<h2>6. Class Diagram</h2>
+<p>Diagram: <a href="04-Class-Diagram.svg"><code>04-Class-Diagram.svg</code></a></p>
+<h3>Controller</h3>
+<ul><li><code>AuthController</code>: <code>showLogin</code>, <code>showRegister</code>, <code>register</code>, <code>login</code>, <code>logout</code>, <code>showAdminLogin</code>, <code>adminLogin</code>, <code>adminLogout</code>, <code>showProfile</code>, <code>updateProfile</code>.</li><li><code>EventController</code>: <code>index</code>, <code>show</code>, <code>dashboard</code>, <code>create</code>, <code>store</code>, <code>edit</code>, <code>update</code>.</li><li><code>RegistrasiController</code>: <code>index</code>, <code>store</code>, <code>showTicket</code>, <code>adminPendaftar</code>, <code>verifikasi</code>.</li></ul>
+<h3>Model</h3>
+<ul><li><code>User</code> → <code>registrasis()</code>.</li><li><code>Admin</code> → <code>events()</code>.</li><li><code>Event</code> → <code>admin()</code>, <code>registrasis()</code>.</li><li><code>Registrasi</code> → <code>user()</code>, <code>event()</code>.</li></ul>
+<p>Garis putus-putus pada diagram menunjukkan dependensi controller ke model, sedangkan garis solid menunjukkan asosiasi antar model.</p>
+<h2>7. Use Case Diagram</h2>
+<p>Diagram: <a href="05-Use-Case-Diagram.svg"><code>05-Use-Case-Diagram.svg</code></a></p>
+<h3>Aktor Peserta</h3>
+<ul><li>Registrasi akun.</li><li>Login user.</li><li>Lihat daftar event.</li><li>Lihat detail event.</li><li>Daftar event.</li><li>Lihat e-tiket.</li><li>Riwayat pendaftaran.</li><li>Kelola profil.</li></ul>
+<h3>Aktor Admin</h3>
+<ul><li>Login admin.</li><li>Kelola event (create/update).</li><li>Verifikasi pendaftar.</li></ul>
+<p>Catatan: <code>Daftar Event</code>, <code>Lihat E-Tiket</code>, <code>Riwayat Pendaftaran</code>, dan <code>Kelola Profil</code> mensyaratkan peserta sudah login.</p>
+<h2>8. Activity Diagram</h2>
+<h3>8.1 Pendaftaran Event</h3>
+<p>Diagram: <a href="06-Aktivitas-Pendaftaran-Event.svg"><code>06-Aktivitas-Pendaftaran-Event.svg</code></a></p>
+<p>Alur: buka detail event → cek status login → login/registrasi jika belum → klik daftar → sistem membuat kode unik → simpan registrasi <code>pending</code> → tampilkan dashboard dan e-tiket. Jika peserta sudah pernah mendaftar, sistem menampilkan pesan error.</p>
+<h3>8.2 Verifikasi Pendaftar</h3>
+<p>Diagram: <a href="07-Aktivitas-Verifikasi-Pendaftar.svg"><code>07-Aktivitas-Verifikasi-Pendaftar.svg</code></a></p>
+<p>Alur: login admin → buka menu verifikasi → lihat daftar pendaftar → pilih pendaftar → putuskan terima/tolak → simpan status dan catatan → tampilkan notifikasi.</p>
+<h3>8.3 Kelola Event</h3>
+<p>Diagram: <a href="08-Aktivitas-Kelola-Event.svg"><code>08-Aktivitas-Kelola-Event.svg</code></a></p>
+<p>Alur: login admin → buka dashboard → pilih tambah/edit event → isi form → validasi server → unggah poster opsional → simpan event (<code>draft</code>/<code>publish</code>) → tampilkan notifikasi.</p>
+<h3>8.4 Registrasi Akun</h3>
+<p>Diagram: <a href="09-Aktivitas-Registrasi-Akun.svg"><code>09-Aktivitas-Registrasi-Akun.svg</code></a></p>
+<p>Alur: buka halaman registrasi → isi data → validasi → simpan user → login otomatis → arahkan ke dashboard.</p>
+<h2>9. Aturan Validasi Server</h2>
+<table>
+<thead><tr><th>Form</th><th>Aturan</th></tr></thead>
+<tbody>
+<tr><td>Registrasi</td><td><code>name</code> required string maks. 255; <code>email</code> required email unik; <code>password</code> required min 8 dan <code>confirmed</code></td></tr>
+<tr><td>Login Peserta</td><td><code>email</code> required email; <code>password</code> required</td></tr>
+<tr><td>Profil</td><td><code>name</code> required string maks. 255; <code>password</code> nullable min 8 dan <code>confirmed</code></td></tr>
+<tr><td>Login Admin</td><td><code>username</code> required; <code>password</code> required</td></tr>
+<tr><td>Event</td><td><code>judul</code>, <code>deskripsi</code>, <code>lokasi</code>, <code>tanggal_mulai</code>, <code>tanggal_selesai</code>, <code>kuota</code>, <code>harga</code>, <code>status</code> wajib; <code>tanggal_selesai</code> <code>after_or_equal:tanggal_mulai</code>; <code>kuota</code> <code>min:1</code>; <code>harga</code> <code>min:0</code>; <code>status</code> <code>in:draft,publish</code>; poster opsional `image</td><td>mimes:jpeg,png,jpg</td><td>max:2048`</td></tr>
+<tr><td>Verifikasi</td><td><code>status</code> required <code>in:diterima,ditolak</code>; <code>catatan</code> nullable string</td></tr>
+</tbody></table>
+<h2>10. Mekanisme Keamanan</h2>
+<ol><li>Guard <code>web</code> untuk peserta dan guard <code>admin</code> untuk penyelenggara.</li><li>Middleware <code>auth</code> dan <code>auth:admin</code> melindungi route area masing-masing.</li><li><code>session()-&gt;regenerate()</code> setelah login untuk mencegah session fixation.</li><li>Password disimpan dengan <code>Hash::make()</code>.</li><li>E-tiket dibatasi oleh <code>user_id</code> yang sedang login.</li><li>Edit/update event dibatasi oleh pencocokan <code>admin_id</code>.</li><li>Model menggunakan soft delete agar data tidak hilang permanen.</li></ol>
+<h2>11. File Draw.io</h2>
+<p>Diagram dapat diedit langsung menggunakan diagrams.net / draw.io:</p>
+<ul><li><a href="Rancangan-Sistem.drawio"><code>Rancangan-Sistem.drawio</code></a> — semua 9 diagram dalam satu file dengan 9 tab/halaman.</li><li><a href="01-DFD-Konteks.drawio"><code>01-DFD-Konteks.drawio</code></a></li><li><a href="02-DFD-Level-0.drawio"><code>02-DFD-Level-0.drawio</code></a></li><li><a href="03-ERD.drawio"><code>03-ERD.drawio</code></a></li><li><a href="04-Class-Diagram.drawio"><code>04-Class-Diagram.drawio</code></a></li><li><a href="05-Use-Case-Diagram.drawio"><code>05-Use-Case-Diagram.drawio</code></a></li><li><a href="06-Aktivitas-Pendaftaran-Event.drawio"><code>06-Aktivitas-Pendaftaran-Event.drawio</code></a></li><li><a href="07-Aktivitas-Verifikasi-Pendaftar.drawio"><code>07-Aktivitas-Verifikasi-Pendaftar.drawio</code></a></li><li><a href="08-Aktivitas-Kelola-Event.drawio"><code>08-Aktivitas-Kelola-Event.drawio</code></a></li><li><a href="09-Aktivitas-Registrasi-Akun.drawio"><code>09-Aktivitas-Registrasi-Akun.drawio</code></a></li></ul>
+<p>File Draw.io menggunakan format XML tidak terkompresi (<code>compressed="false"</code>), sehingga dapat dibuka kembali dan dimodifikasi tanpa kehilangan shape.</p>
+<h2>12. Daftar Artefak Diagram</h2>
+<table>
+<thead><tr><th>File</th><th>Jenis</th></tr></thead>
+<tbody>
+<tr><td><a href="01-DFD-Konteks.svg"><code>01-DFD-Konteks.svg</code></a></td><td>DFD Konteks</td></tr>
+<tr><td><a href="02-DFD-Level-0.svg"><code>02-DFD-Level-0.svg</code></a></td><td>DFD Level 0</td></tr>
+<tr><td><a href="03-ERD.svg"><code>03-ERD.svg</code></a></td><td>Entity Relationship Diagram</td></tr>
+<tr><td><a href="04-Class-Diagram.svg"><code>04-Class-Diagram.svg</code></a></td><td>Class Diagram</td></tr>
+<tr><td><a href="05-Use-Case-Diagram.svg"><code>05-Use-Case-Diagram.svg</code></a></td><td>Use Case Diagram</td></tr>
+<tr><td><a href="06-Aktivitas-Pendaftaran-Event.svg"><code>06-Aktivitas-Pendaftaran-Event.svg</code></a></td><td>Activity Diagram pendaftaran</td></tr>
+<tr><td><a href="07-Aktivitas-Verifikasi-Pendaftar.svg"><code>07-Aktivitas-Verifikasi-Pendaftar.svg</code></a></td><td>Activity Diagram verifikasi</td></tr>
+<tr><td><a href="08-Aktivitas-Kelola-Event.svg"><code>08-Aktivitas-Kelola-Event.svg</code></a></td><td>Activity Diagram kelola event</td></tr>
+<tr><td><a href="09-Aktivitas-Registrasi-Akun.svg"><code>09-Aktivitas-Registrasi-Akun.svg</code></a></td><td>Activity Diagram registrasi akun</td></tr>
+<tr><td><a href="../03-Desain-UI-UX/12-Alur-Navigasi.svg"><code>12-Alur-Navigasi.svg</code></a></td><td>Alur navigasi UI/UX</td></tr>
+</tbody></table>
+</main>
+<footer>
+  <span>ErrorWeb &mdash; EventKita</span>
+  <span>Dokumen ini dapat dicetak langsung dari browser</span>
+</footer>
+</body>
+</html>
