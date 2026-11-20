@@ -187,7 +187,7 @@ Seluruh temuan hanya dicatat; tidak ada perubahan pada kode aplikasi dalam kegia
 | Folder | Isi |
 | --- | --- |
 | [`../README.md`](../README.md) | Ringkasan seluruh deliverable |
-| [`../index.html`](../index.html) | Galeri dan navigasi artefak |
+| [`../index.pdf`](../index.pdf) | Galeri dan navigasi artefak |
 | [`../01-Analisis-Kebutuhan`](../01-Analisis-Kebutuhan/Analisis-Kebutuhan.md) | Analisis kebutuhan |
 | [`../02-Rancangan-Sistem`](../02-Rancangan-Sistem/Rancangan-Sistem.md) | Diagram dan penjelasan sistem |
 | [`../03-Desain-UI-UX`](../03-Desain-UI-UX/README.md) | Style guide dan 13 SVG UI/UX |
@@ -195,7 +195,7 @@ Seluruh temuan hanya dicatat; tidak ada perubahan pada kode aplikasi dalam kegia
 | [`../05-Laporan-Testing`](../05-Laporan-Testing/Laporan-Testing.md) | Laporan dan hasil pengujian |
 | [`../06-Aplikasi-Final`](../06-Aplikasi-Final/README.md) | Catatan hosting |
 | [`07-Laporan-Akhir.md`](Laporan-Akhir.md) | Laporan akhir versi Markdown |
-| [`Laporan-Akhir.html`](Laporan-Akhir.html) | Laporan akhir versi cetak |
+| [`Laporan-Akhir.pdf`](Laporan-Akhir.pdf) | Laporan akhir versi cetak |
 
 ---
 

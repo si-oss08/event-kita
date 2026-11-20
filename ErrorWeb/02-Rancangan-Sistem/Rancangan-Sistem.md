@@ -1,6 +1,6 @@
 # Rancangan Sistem — EventKita
 
-Dokumen ini menjelaskan rancangan sistem EventKita berdasarkan implementasi Laravel pada repository. Seluruh diagram disajikan dalam dua format: SVG hitam putih untuk dilihat/dicetak dan `.drawio` untuk diedit di diagrams.net. File [`Rancangan-Sistem.drawio`](Rancangan-Sistem.drawio) berisi semua diagram dalam satu file multi-halaman; tersedia juga file `.drawio` per diagram.
+Dokumen ini menjelaskan rancangan sistem EventKita berdasarkan implementasi Laravel pada repository. Seluruh diagram disajikan dalam dua format: SVG hitam putih untuk dilihat/dicetak dan `.drawio` untuk diedit di diagrams.net. File [`Rancangan-Sistem.drawio`](Rancangan-Sistem.drawio) berisi semua diagram dalam satu file multi-halaman; cukup unggah satu file tersebut ke diagrams.net (**File → Open From → Device**) dan kesembilan diagram langsung dimuat sebagai 9 halaman/tab. Tersedia juga file `.drawio` per diagram.
 
 ## 1. Arsitektur Umum
 

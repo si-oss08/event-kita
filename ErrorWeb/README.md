@@ -18,12 +18,15 @@ Folder ini berisi kumpulan deliverable kelompok **ErrorWeb** untuk proyek **Plat
 ```text
 ErrorWeb/
 ├── README.md                         Ringkasan seluruh deliverable
-├── index.html                        Galeri & navigasi semua artefak
+├── README.pdf                        Versi cetak ringkasan
+├── index.pdf                         Galeri & navigasi semua artefak
 ├── 01-Analisis-Kebutuhan/
-│   └── Analisis-Kebutuhan.md         Latar belakang, tujuan, kebutuhan
+│   ├── Analisis-Kebutuhan.md         Latar belakang, tujuan, kebutuhan
+│   └── Analisis-Kebutuhan.pdf        Versi cetak
 ├── 02-Rancangan-Sistem/
 │   ├── Rancangan-Sistem.md           Penjelasan rancangan & diagram
-│   ├── Rancangan-Sistem.drawio       Semua diagram dalam 1 file multi-halaman
+│   ├── Rancangan-Sistem.pdf          Versi cetak
+│   ├── Rancangan-Sistem.drawio       Semua diagram dalam 1 file, 9 halaman/tab
 │   ├── 01-DFD-Konteks.svg / .drawio
 │   ├── 02-DFD-Level-0.svg / .drawio
 │   ├── 03-ERD.svg / .drawio
@@ -35,6 +38,7 @@ ErrorWeb/
 │   └── 09-Aktivitas-Registrasi-Akun.svg / .drawio
 ├── 03-Desain-UI-UX/
 │   ├── README.md                     Panduan desain & daftar layar
+│   ├── README.pdf                    Versi cetak
 │   ├── 00-Style-Guide.svg
 │   ├── 01-Landing-Page.svg
 │   ├── 02-Login-Peserta.svg
@@ -52,12 +56,15 @@ ErrorWeb/
 │   └── .gitkeep                      Sengaja dikosongkan
 ├── 05-Laporan-Testing/
 │   ├── Laporan-Testing.md            Metode, kasus uji, temuan
-│   └── Hasil-Pengujian.md            Rekap hasil pengujian
+│   ├── Laporan-Testing.pdf           Versi cetak
+│   ├── Hasil-Pengujian.md            Rekap hasil pengujian
+│   └── Hasil-Pengujian.pdf           Versi cetak
 ├── 06-Aplikasi-Final/
-│   └── README.md                     Catatan hosting & akses aplikasi
+│   ├── README.md                     Catatan hosting & akses aplikasi
+│   └── README.pdf                    Versi cetak
 └── 07-Laporan-Akhir/
     ├── Laporan-Akhir.md              Laporan akhir lengkap
-    └── Laporan-Akhir.html            Versi cetak / print-ready
+    └── Laporan-Akhir.pdf             Versi cetak / print-ready
 ```
 
 ## Ringkasan Fitur Aplikasi
@@ -70,9 +77,10 @@ ErrorWeb/
 
 ## Cara Melihat Artefak
 
-- Buka `index.html` melalui browser untuk galeri seluruh SVG dan tautan dokumen.
+- Buka `index.pdf` untuk melihat galeri seluruh SVG dan tautan dokumen.
 - Dokumen Markdown dapat dibaca langsung di editor atau GitHub.
-- Versi HTML tersedia untuk pencetakan pada `07-Laporan-Akhir/Laporan-Akhir.html` dan dokumen pendukung lainnya.
+- Setiap dokumen tersedia dalam versi PDF siap cetak, termasuk `07-Laporan-Akhir/Laporan-Akhir.pdf`.
+- Untuk mengedit diagram, unggah `02-Rancangan-Sistem/Rancangan-Sistem.drawio` ke diagrams.net melalui **File → Open From → Device**; seluruh 9 diagram langsung dimuat sebagai 9 halaman/tab. File `.drawio` per diagram juga tetap tersedia.
 
 ## Catatan Penting
 
@@ -80,4 +88,4 @@ ErrorWeb/
 - Tidak ada video demonstrasi yang dibuat.
 - Folder `06-Aplikasi-Final/` hanya berisi catatan karena hosting aplikasi dilakukan sendiri oleh tim.
 - Seluruh desain UI/UX dibuat dalam format SVG berwarna hitam putih.
-- Diagram pada `02-Rancangan-Sistem/` tersedia dalam dua format: SVG untuk dilihat/dicetak dan `.drawio` untuk diedit di diagrams.net.
+- Diagram pada `02-Rancangan-Sistem/` tersedia dalam tiga format: SVG untuk dilihat/dicetak, `.drawio` per diagram, dan satu file `Rancangan-Sistem.drawio` multi-halaman untuk mengedit semuanya sekaligus.
