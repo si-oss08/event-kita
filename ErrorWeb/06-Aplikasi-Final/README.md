@@ -1,16 +1,22 @@
 # Aplikasi Final — EventKita
 
-Folder ini sengaja **hanya berisi catatan**. Hosting aplikasi dilakukan sendiri oleh tim, sehingga tidak disimpan file hasil build, arsip, atau salinan kode di dalam folder ini.
+Folder ini sengaja **hanya berisi catatan**. Aplikasi final sudah di-hosting, sehingga tidak disimpan file hasil build, arsip, atau salinan kode di dalam folder ini.
 
 ## Status
 
 | Keterangan | Isi |
 | --- | --- |
 | Sumber aplikasi | Root repository Laravel (`app/`, `routes/`, `resources/`, `database/`) |
-| Hosting | Dilakukan sendiri oleh tim |
+| Repositori GitHub | [si-oss08/event-kita](https://github.com/si-oss08/event-kita) |
+| Hosting | [eventkita.infinityfreeapp.com](https://eventkita.infinityfreeapp.com/) |
 | Isi folder | Catatan ini saja |
 | Video demo | Tidak dibuat |
 | Perubahan kode pada dokumentasi ini | Tidak ada |
+
+## Tautan Aplikasi
+
+- Aplikasi live: [https://eventkita.infinityfreeapp.com/](https://eventkita.infinityfreeapp.com/)
+- Kode sumber: [https://github.com/si-oss08/event-kita](https://github.com/si-oss08/event-kita)
 
 ## Catatan Deployment
 

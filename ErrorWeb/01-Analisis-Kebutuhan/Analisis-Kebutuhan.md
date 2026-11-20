@@ -121,13 +121,13 @@ Menyediakan platform pendaftaran dan manajemen event berbasis web yang memungkin
 - Database MySQL tersedia dengan nama `event_kita` untuk lingkungan lokal.
 - Admin dan peserta sudah memiliki akun sebelum pengujian fitur area terproteksi.
 - Poster event berupa gambar `jpeg`, `png`, atau `jpg` dengan ukuran maksimal 2 MB.
-- Tim melakukan hosting aplikasi secara mandiri, sehingga folder aplikasi final tidak berisi file aplikasi.
+- Tim melakukan hosting aplikasi pada InfinityFree, sehingga folder aplikasi final hanya berisi catatan dan tautan [aplikasi live](https://eventkita.infinityfreeapp.com/).
 
 ### Kendala
 
 - Pengujian otomatis bawaan menggunakan SQLite `:memory:` sementara konfigurasi aplikasi memakai MySQL; tanpa migrasi pada test database, test feature akan gagal.
 - Verifikasi visual langsung melalui screenshot tidak tersedia pada lingkungan agent, sehingga pengecekan desain dilakukan melalui validasi XML SVG dan pemeriksaan struktur.
-- Folder `04-Pengembangan-Aplikasi/` sengaja dikosongkan sesuai permintaan.
+- Folder `04-Pengembangan-Aplikasi/` berisi tautan [repositori GitHub](https://github.com/si-oss08/event-kita) karena kode sumber berada langsung di root repository.
 
 ## 10. Daftar Halaman
 

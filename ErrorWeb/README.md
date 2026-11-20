@@ -11,7 +11,14 @@ Folder ini berisi kumpulan deliverable kelompok **ErrorWeb** untuk proyek **Plat
 | Jenis aplikasi | Aplikasi web Laravel |
 | Tema desain | Hitam putih / grayscale |
 | Lokasi dokumentasi | `ErrorWeb/` pada root repository |
-| Status | Dokumen dan desain selesai; aplikasi final di-hosting sendiri oleh tim |
+| Status | Dokumen dan desain selesai; aplikasi final di-hosting di InfinityFree |
+
+## Tautan Proyek
+
+| Keterangan | Tautan |
+| --- | --- |
+| Repositori GitHub | [github.com/si-oss08/event-kita](https://github.com/si-oss08/event-kita) |
+| Aplikasi live | [eventkita.infinityfreeapp.com](https://eventkita.infinityfreeapp.com/) |
 
 ## Peta Struktur
 
@@ -53,7 +60,8 @@ ErrorWeb/
 │   ├── 11-Verifikasi-Pendaftar.svg
 │   └── 12-Alur-Navigasi.svg
 ├── 04-Pengembangan-Aplikasi/
-│   └── .gitkeep                      Sengaja dikosongkan
+│   ├── README.md                     Tautan repositori GitHub
+│   └── README.pdf                    Versi cetak
 ├── 05-Laporan-Testing/
 │   ├── Laporan-Testing.md            Metode, kasus uji, temuan
 │   ├── Laporan-Testing.pdf           Versi cetak
@@ -84,8 +92,8 @@ ErrorWeb/
 
 ## Catatan Penting
 
-- Folder `04-Pengembangan-Aplikasi/` sengaja tidak diisi karena kode aplikasi berada langsung di root repository Laravel.
+- Folder `04-Pengembangan-Aplikasi/` berisi tautan repositori GitHub karena kode aplikasi berada langsung di root repository Laravel.
 - Tidak ada video demonstrasi yang dibuat.
-- Folder `06-Aplikasi-Final/` hanya berisi catatan karena hosting aplikasi dilakukan sendiri oleh tim.
+- Folder `06-Aplikasi-Final/` berisi catatan hosting dan tautan aplikasi live di InfinityFree.
 - Seluruh desain UI/UX dibuat dalam format SVG berwarna hitam putih.
 - Diagram pada `02-Rancangan-Sistem/` tersedia dalam tiga format: SVG untuk dilihat/dicetak, `.drawio` per diagram, dan satu file `Rancangan-Sistem.drawio` multi-halaman untuk mengedit semuanya sekaligus.

@@ -12,7 +12,7 @@
 
 EventKita adalah aplikasi web untuk mengelola proses pendaftaran event dari sisi peserta dan penyelenggara. Aplikasi memungkinkan publik melihat event, peserta mendaftar dan memperoleh e-tiket, serta admin membuat event dan memverifikasi pendaftar.
 
-Seluruh deliverable kelompok dikumpulkan dalam folder `ErrorWeb/` yang terdiri dari tujuh bagian: analisis kebutuhan, rancangan sistem, desain UI/UX, pengembangan aplikasi, laporan testing, aplikasi final, dan laporan akhir. Folder pengembangan sengaja dikosongkan karena kode aplikasi berada langsung di repository, folder aplikasi final hanya berisi catatan hosting, dan tidak dibuat video demonstrasi.
+Seluruh deliverable kelompok dikumpulkan dalam folder `ErrorWeb/` yang terdiri dari tujuh bagian: analisis kebutuhan, rancangan sistem, desain UI/UX, pengembangan aplikasi, laporan testing, aplikasi final, dan laporan akhir. Folder pengembangan berisi tautan ke [repositori GitHub](https://github.com/si-oss08/event-kita) karena kode aplikasi berada langsung di repository, folder aplikasi final berisi catatan hosting dan tautan [aplikasi live](https://eventkita.infinityfreeapp.com/), dan tidak dibuat video demonstrasi.
 
 ## Daftar Isi
 
@@ -191,9 +191,11 @@ Seluruh temuan hanya dicatat; tidak ada perubahan pada kode aplikasi dalam kegia
 | [`../01-Analisis-Kebutuhan`](../01-Analisis-Kebutuhan/Analisis-Kebutuhan.md) | Analisis kebutuhan |
 | [`../02-Rancangan-Sistem`](../02-Rancangan-Sistem/Rancangan-Sistem.md) | Diagram dan penjelasan sistem |
 | [`../03-Desain-UI-UX`](../03-Desain-UI-UX/README.md) | Style guide dan 13 SVG UI/UX |
-| [`../04-Pengembangan-Aplikasi`](../04-Pengembangan-Aplikasi/.gitkeep) | Sengaja kosong |
+| [`../04-Pengembangan-Aplikasi`](../04-Pengembangan-Aplikasi/README.md) | Tautan repositori GitHub dan panduan pengembangan |
 | [`../05-Laporan-Testing`](../05-Laporan-Testing/Laporan-Testing.md) | Laporan dan hasil pengujian |
-| [`../06-Aplikasi-Final`](../06-Aplikasi-Final/README.md) | Catatan hosting |
+| [`../06-Aplikasi-Final`](../06-Aplikasi-Final/README.md) | Catatan hosting dan tautan aplikasi live |
+| [Repositori GitHub](https://github.com/si-oss08/event-kita) | Kode sumber aplikasi |
+| [Aplikasi live](https://eventkita.infinityfreeapp.com/) | Hosting aplikasi final |
 | [`07-Laporan-Akhir.md`](Laporan-Akhir.md) | Laporan akhir versi Markdown |
 | [`Laporan-Akhir.pdf`](Laporan-Akhir.pdf) | Laporan akhir versi cetak |
 
