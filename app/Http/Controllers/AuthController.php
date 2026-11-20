@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function showLogin() { return view('auth.login'); }
-    public function showRegister() { return view('auth.register'); }
+    public function showLogin()
+    {
+        return view('auth.login');
+    }
+
+    public function showRegister()
+    {
+        return view('auth.register');
+    }
 
     public function register(Request $request)
     {
@@ -35,11 +42,12 @@ class AuthController extends Controller
     {
         $credentials = $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
             return redirect()->intended('/dashboard');
         }
 
@@ -51,28 +59,29 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect('/');
     }
 
-    public function showAdminLogin() 
-    { 
-        return view('auth.admin-login'); 
+    public function showAdminLogin()
+    {
+        return view('auth.admin-login');
     }
 
     public function adminLogin(Request $request)
     {
         $credentials = $request->validate([
             'username' => 'required',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
-        // Menggunakan guard 'admin' yang sudah kita setup di config/auth.php
-        if (Auth::guard('admin')->attempt($credentials)) {
+        // Hanya admin aktif yang boleh login (guard 'admin' ada di config/auth.php)
+        if (Auth::guard('admin')->attempt($credentials + ['is_active' => true])) {
             $request->session()->regenerate();
-            
+
             // Update waktu login terakhir
-            \App\Models\Admin::where('username', $request->username)->update(['last_login_at' => now()]);
-            
+            Auth::guard('admin')->user()->update(['last_login_at' => now()]);
+
             return redirect()->route('admin.dashboard');
         }
 
@@ -84,6 +93,7 @@ class AuthController extends Controller
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect()->route('admin.login');
     }
 

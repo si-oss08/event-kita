@@ -69,6 +69,8 @@
                 <select name="status" class="w-full border border-slate-300 dark:border-slate-600 px-4 py-2.5 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-all">
                     <option value="draft" {{ old('status') == 'draft' ? 'selected' : '' }}>Draft (Simpan Sementara)</option>
                     <option value="publish" {{ old('status') == 'publish' ? 'selected' : '' }}>Publish (Tampilkan ke User)</option>
+                    <option value="selesai" {{ old('status') == 'selesai' ? 'selected' : '' }}>Selesai (Event Telah Berlangsung)</option>
+                    <option value="batal" {{ old('status') == 'batal' ? 'selected' : '' }}>Batal (Event Dibatalkan)</option>
                 </select>
             </div>
 

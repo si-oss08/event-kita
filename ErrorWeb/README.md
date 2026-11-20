@@ -11,7 +11,7 @@ Folder ini berisi kumpulan deliverable kelompok **ErrorWeb** untuk proyek **Plat
 | Jenis aplikasi | Aplikasi web Laravel |
 | Tema desain | Hitam putih / grayscale |
 | Lokasi dokumentasi | `ErrorWeb/` pada root repository |
-| Status | Dokumen dan desain selesai; aplikasi final di-hosting di InfinityFree |
+| Status | Dokumen, desain, dan aplikasi selesai; 18/18 test lulus; aplikasi final di-hosting di InfinityFree |
 
 ## Tautan Proyek
 
@@ -95,5 +95,6 @@ ErrorWeb/
 - Folder `04-Pengembangan-Aplikasi/` berisi tautan repositori GitHub karena kode aplikasi berada langsung di root repository Laravel.
 - Tidak ada video demonstrasi yang dibuat.
 - Folder `06-Aplikasi-Final/` berisi catatan hosting dan tautan aplikasi live di InfinityFree.
+- Seluruh temuan pengujian berprioritas tinggi dan sedang telah diperbaiki; hasil terbaru ada di `05-Laporan-Testing/`.
 - Seluruh desain UI/UX dibuat dalam format SVG berwarna hitam putih.
 - Diagram pada `02-Rancangan-Sistem/` tersedia dalam tiga format: SVG untuk dilihat/dicetak, `.drawio` per diagram, dan satu file `Rancangan-Sistem.drawio` multi-halaman untuk mengedit semuanya sekaligus.

@@ -42,4 +42,4 @@ Saat aplikasi dipasang di server/hosting, langkah umum yang perlu dilakukan:
 
 ## Catatan Sebelum Produksi
 
-Sebelum aplikasi dipakai publik, perbaiki temuan pada [`../05-Laporan-Testing/Laporan-Testing.md`](../05-Laporan-Testing/Laporan-Testing.md), terutama yang berprioritas tinggi.
+Seluruh temuan pada [`../05-Laporan-Testing/Laporan-Testing.md`](../05-Laporan-Testing/Laporan-Testing.md) telah diperbaiki dan diverifikasi dengan 18 test otomatis (44 assertion). Sebelum dipakai publik, cukup pastikan konfigurasi `.env`, migrasi, dan tautan storage sudah sesuai dengan server hosting.

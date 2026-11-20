@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Registrasi;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -13,14 +14,24 @@ class EventController extends Controller
     public function dashboard()
     {
         $admin = Auth::guard('admin')->user();
-        
+
         // Ambil statistik sederhana untuk dashboard
-        $totalEvents = Event::where('admin_id', $admin->id)->count();
-        
+        $eventIds = Event::where('admin_id', $admin->id)->pluck('id');
+        $totalEvents = $eventIds->count();
+        $totalRegistrations = Registrasi::whereIn('event_id', $eventIds)->count();
+        $pendingApprovals = Registrasi::whereIn('event_id', $eventIds)
+            ->where('status', 'pending')
+            ->count();
+
         // Ambil 5 event terbaru buatan admin ini
         $events = Event::where('admin_id', $admin->id)->latest()->take(5)->get();
 
-        return view('admin.dashboard', compact('totalEvents', 'events'));
+        return view('admin.dashboard', compact(
+            'totalEvents',
+            'totalRegistrations',
+            'pendingApprovals',
+            'events'
+        ));
     }
 
     public function create()
@@ -38,7 +49,7 @@ class EventController extends Controller
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
             'kuota' => 'required|integer|min:1',
             'harga' => 'required|numeric|min:0',
-            'status' => 'required|in:draft,publish',
+            'status' => 'required|in:draft,publish,selesai,batal',
             'poster' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // Tambahkan validasi gambar
         ]);
 
@@ -52,7 +63,7 @@ class EventController extends Controller
         Event::create([
             'admin_id' => Auth::guard('admin')->id(),
             'judul' => $request->judul,
-            'slug' => Str::slug($request->judul) . '-' . Str::random(5),
+            'slug' => Str::slug($request->judul).'-'.Str::random(5),
             'deskripsi' => $request->deskripsi,
             'lokasi' => $request->lokasi,
             'tanggal_mulai' => $request->tanggal_mulai,
@@ -88,7 +99,7 @@ class EventController extends Controller
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
             'kuota' => 'required|integer|min:1',
             'harga' => 'required|numeric|min:0',
-            'status' => 'required|in:draft,publish',
+            'status' => 'required|in:draft,publish,selesai,batal',
             'poster' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -125,22 +136,37 @@ class EventController extends Controller
     {
         // Hanya ambil event yang statusnya 'publish', urutkan dari yang terbaru
         $events = Event::where('status', 'publish')->latest()->get();
+
         return view('welcome', compact('events'));
     }
 
     // 2. Menampilkan Detail Event (untuk halaman pendaftaran)
     public function show($slug)
     {
-        $event = Event::where('slug', $slug)->firstOrFail();
-        
+        // Event draft/selesai/batal tidak boleh diakses publik
+        $event = Event::where('slug', $slug)
+            ->where('status', 'publish')
+            ->firstOrFail();
+
+        $terisi = $event->registrasis()
+            ->whereIn('status', ['pending', 'diterima', 'hadir'])
+            ->count();
+        $sisaKuota = max($event->kuota - $terisi, 0);
+        $pendaftaranDitutup = now()->greaterThan($event->tanggal_selesai);
+
         // Cek apakah user yang login sudah mendaftar event ini
         $sudahDaftar = false;
         if (Auth::check()) {
-            $sudahDaftar = \App\Models\Registrasi::where('user_id', Auth::id())
-                            ->where('event_id', $event->id)
-                            ->exists();
+            $sudahDaftar = Registrasi::where('user_id', Auth::id())
+                ->where('event_id', $event->id)
+                ->exists();
         }
 
-        return view('event.detail', compact('event', 'sudahDaftar'));
+        return view('event.detail', compact(
+            'event',
+            'sudahDaftar',
+            'sisaKuota',
+            'pendaftaranDitutup'
+        ));
     }
 }

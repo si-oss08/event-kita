@@ -132,7 +132,7 @@ Sembilan route diuji; seluruhnya menghasilkan status sesuai ekspektasi. Route te
 
 ### 5.2 Test Otomatis
 
-Pest menjalankan dua test: satu lulus dan satu gagal. Kegagalan terjadi karena lingkungan test menggunakan SQLite `:memory:` tanpa migrasi, sehingga tabel `events` belum ada.
+Pest menjalankan 18 test dengan 44 assertion dan seluruhnya lulus. Test mencakup halaman publik, autentikasi peserta dan admin, pendaftaran event, validasi kuota/tanggal, statistik dashboard admin, serta batas kepemilikan verifikasi. Pada pengujian awal sempat terjadi kegagalan karena skema database test belum dimigrasi; kondisi tersebut sudah diperbaiki dengan mengaktifkan `RefreshDatabase` dan menambahkan test fitur.
 
 ### 5.3 Validasi SVG dan Draw.io
 
@@ -143,26 +143,26 @@ Sebanyak 22 file SVG dan 10 file Draw.io divalidasi sebagai XML dan seluruhnya d
 | Pengujian | Hasil |
 | --- | --- |
 | Smoke test | 9/9 lulus |
-| Pest | 1 lulus, 1 gagal |
+| Pest | 18 lulus, 0 gagal (44 assertion) |
 | SVG & Draw.io | 22/22 SVG + 10/10 Draw.io valid |
-| Temuan perbaikan | 8 item |
+| Temuan perbaikan | 8 item, seluruhnya ditindaklanjuti |
 
 Dokumen lengkap: [`../05-Laporan-Testing/Laporan-Testing.md`](../05-Laporan-Testing/Laporan-Testing.md) dan [`../05-Laporan-Testing/Hasil-Pengujian.md`](../05-Laporan-Testing/Hasil-Pengujian.md).
 
 ## 6. Pembahasan Temuan
 
-| Temuan | Prioritas |
-| --- | --- |
-| `RefreshDatabase` belum aktif pada test feature | Tinggi |
-| Statistik pendaftaran dan approval hard-coded `0` | Tinggi |
-| Pendaftaran belum memvalidasi status, kuota, dan waktu event | Tinggi |
-| Verifikasi belum dibatasi pada event milik admin sendiri | Tinggi |
-| `is_active` admin belum diperiksa saat login | Tinggi |
-| Guest admin diarahkan ke `/login`, bukan `/admin/login` | Sedang |
-| Detail publik belum memfilter status `publish` | Sedang |
-| Enum status event lebih luas dari pilihan form | Rendah |
+| Temuan | Prioritas | Status |
+| --- | --- | --- |
+| `RefreshDatabase` belum aktif pada test feature | Tinggi | Diperbaiki, 18 test lulus |
+| Statistik pendaftaran dan approval hard-coded `0` | Tinggi | Dihitung dari data aktual |
+| Pendaftaran belum memvalidasi status, kuota, dan waktu event | Tinggi | Validasi ditambahkan |
+| Verifikasi belum dibatasi pada event milik admin sendiri | Tinggi | Dibatasi lewat relasi `event.admin_id` |
+| `is_active` admin belum diperiksa saat login | Tinggi | Diperiksa saat login |
+| Guest admin diarahkan ke `/login`, bukan `/admin/login` | Sedang | Diarahkan ke `/admin/login` |
+| Detail publik belum memfilter status `publish` | Sedang | Hanya event `publish` yang tampil |
+| Enum status event lebih luas dari pilihan form | Rendah | Form mendukung seluruh status enum |
 
-Seluruh temuan hanya dicatat; tidak ada perubahan pada kode aplikasi dalam kegiatan dokumentasi ini.
+Seluruh temuan telah ditindaklanjuti, diverifikasi dengan 18 test otomatis, dan dicek ulang pada route utama aplikasi.
 
 ## 7. Kesimpulan dan Saran
 
@@ -171,16 +171,16 @@ Seluruh temuan hanya dicatat; tidak ada perubahan pada kode aplikasi dalam kegia
 - Struktur folder `ErrorWeb/` lengkap sesuai permintaan kelompok.
 - Diagram sistem dan desain UI/UX telah dibuat dalam format SVG hitam putih dan valid; diagram rancangan sistem juga tersedia dalam format Draw.io yang dapat diedit.
 - Dokumen analisis, rancangan, pengujian, aplikasi final, dan laporan akhir telah tersedia.
-- Aplikasi dapat diakses pada route publik dan proteksi akses dasar berjalan.
-- Test otomatis belum lulus karena konfigurasi database test belum siap.
+- Aplikasi dapat diakses pada route publik dan proteksi akses berjalan.
+- Test otomatis lulus seluruhnya: 18 test dengan 44 assertion.
+- Seluruh temuan berprioritas tinggi dan sedang telah diperbaiki.
 
 ### Saran
 
-1. Aktifkan `RefreshDatabase` dan tambahkan test fitur untuk alur pendaftaran serta verifikasi.
-2. Terapkan perbaikan berprioritas tinggi sebelum hosting produksi.
-3. Samakan redirect guest admin ke `/admin/login`.
-4. Hitung statistik admin dari data aktual.
-5. Batasi verifikasi dan detail event sesuai kepemilikan/status.
+1. Tambahkan pembayaran online dan notifikasi email bila ruang lingkup proyek diperluas.
+2. Tambahkan pagination pada daftar pendaftar jika jumlah peserta bertambah besar.
+3. Pertimbangkan penjadwalan otomatis untuk mengubah status event menjadi `selesai` setelah tanggal berakhir.
+4. Lakukan pengujian beban sederhana sebelum dipakai pada event berskala besar.
 
 ## 8. Lampiran Artefak
 

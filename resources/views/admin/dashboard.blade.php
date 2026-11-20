@@ -68,7 +68,7 @@
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-1">Total Registrations</p>
-                        <h3 class="text-4xl font-extrabold text-blue-600 dark:text-blue-400">0</h3>
+                        <h3 class="text-4xl font-extrabold text-blue-600 dark:text-blue-400">{{ $totalRegistrations }}</h3>
                     </div>
                     <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/30">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -80,7 +80,7 @@
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-1">Pending Approvals</p>
-                        <h3 class="text-4xl font-extrabold text-amber-500 dark:text-amber-400">0</h3>
+                        <h3 class="text-4xl font-extrabold text-amber-500 dark:text-amber-400">{{ $pendingApprovals }}</h3>
                     </div>
                     <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-lg shadow-amber-500/30">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -111,11 +111,15 @@
                             <td class="p-5 font-bold text-slate-800 dark:text-white">{{ $event->judul }}</td>
                             <td class="p-5 text-sm text-slate-600 dark:text-slate-400">{{ \Carbon\Carbon::parse($event->tanggal_mulai)->format('d M Y') }}</td>
                             <td class="p-5">
-                                @if($event->status == 'publish')
-                                    <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-extrabold shadow-sm shadow-emerald-500/30">PUBLISHED</span>
-                                @else
-                                    <span class="bg-slate-400 text-white px-3 py-1 rounded-full text-xs font-extrabold shadow-sm shadow-slate-400/30">DRAFT</span>
-                                @endif
+                                @php
+                                    $badgeColor = match ($event->status) {
+                                        'publish' => 'bg-emerald-500 shadow-emerald-500/30',
+                                        'selesai' => 'bg-blue-500 shadow-blue-500/30',
+                                        'batal' => 'bg-rose-500 shadow-rose-500/30',
+                                        default => 'bg-slate-400 shadow-slate-400/30',
+                                    };
+                                @endphp
+                                <span class="{{ $badgeColor }} text-white px-3 py-1 rounded-full text-xs font-extrabold shadow-sm">{{ strtoupper($event->status) }}</span>
                             </td>
                             <td class="p-5">
                                 <a href="{{ route('admin.events.edit', $event->id) }}" class="inline-flex items-center gap-1.5 bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm shadow-blue-500/30 hover:bg-blue-700 hover:shadow-blue-500/40 transition-all">

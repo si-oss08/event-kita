@@ -57,7 +57,7 @@
                         <span class="text-2xl">👥</span>
                         <div>
                             <p class="font-semibold text-slate-900 dark:text-white">Kuota Tersedia</p>
-                            <p class="text-sm">{{ $event->kuota }} Peserta</p>
+                            <p class="text-sm">{{ $sisaKuota }} dari {{ $event->kuota }} Peserta</p>
                         </div>
                     </div>
                 </div>
@@ -74,6 +74,14 @@
                         <div class="bg-green-50 dark:bg-emerald-500/10 text-green-700 dark:text-emerald-400 p-4 rounded-xl text-center border border-green-200 dark:border-emerald-500/20">
                             <p class="font-bold">✅ Kamu sudah terdaftar di event ini.</p>
                             <a href="{{ route('user.dashboard') }}" class="text-sm underline mt-1 block hover:text-green-800 dark:hover:text-emerald-300">Lihat Tiketmu di Dashboard</a>
+                        </div>
+                    @elseif($pendaftaranDitutup)
+                        <div class="bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 p-4 rounded-xl text-center border border-slate-200 dark:border-slate-600">
+                            <p class="font-bold">Pendaftaran event ini sudah ditutup.</p>
+                        </div>
+                    @elseif($sisaKuota <= 0)
+                        <div class="bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 p-4 rounded-xl text-center border border-amber-200 dark:border-amber-500/20">
+                            <p class="font-bold">Kuota event ini sudah penuh.</p>
                         </div>
                     @else
                         <form method="POST" action="{{ route('event.daftar', $event->id) }}">

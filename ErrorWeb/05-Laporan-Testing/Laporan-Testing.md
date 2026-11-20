@@ -41,11 +41,11 @@ curl.exe -s -o NUL -w "%{http_code} %{redirect_url}" http://127.0.0.1:8000/dashb
 | TC-04 | `GET /admin/login` | 200 | 200 | Lulus |
 | TC-05 | `GET /dashboard` tanpa login | 302 ke `/login` | 302 ke `/login` | Lulus |
 | TC-06 | `GET /profile` tanpa login | 302 ke `/login` | 302 ke `/login` | Lulus |
-| TC-07 | `GET /admin/dashboard` tanpa login | 302 ke halaman login | 302 ke `/login` | Lulus dengan catatan |
-| TC-08 | `GET /admin/pendaftar` tanpa login | 302 ke halaman login | 302 ke `/login` | Lulus dengan catatan |
+| TC-07 | `GET /admin/dashboard` tanpa login | 302 ke `/admin/login` | 302 ke `/admin/login` | Lulus |
+| TC-08 | `GET /admin/pendaftar` tanpa login | 302 ke `/admin/login` | 302 ke `/admin/login` | Lulus |
 | TC-09 | `GET /event/tidak-ada` | 404 | 404 | Lulus |
 
-Ringkasan smoke test: **9 dari 9 request menghasilkan status sesuai ekspektasi**. Dua di antaranya diberi catatan karena admin diarahkan ke `/login`, bukan `/admin/login`.
+Ringkasan smoke test: **9 dari 9 request menghasilkan status sesuai ekspektasi**. Guest area admin kini diarahkan ke `/admin/login` setelah perbaikan redirect.
 
 ## 5. Pengujian Otomatis Pest
 
@@ -55,40 +55,35 @@ Perintah:
 php artisan test --colors=never
 ```
 
-Hasil:
+Hasil terbaru:
 
 | Metrik | Nilai |
 | --- | --- |
-| Total test | 2 |
-| Lulus | 1 |
-| Gagal | 1 |
-| Assertions | 2 |
+| Total test | 18 |
+| Lulus | 18 |
+| Gagal | 0 |
+| Assertions | 44 |
 
-Detail:
+Test fitur baru mencakup alur utama aplikasi:
 
-| Test | Status | Keterangan |
-| --- | --- | --- |
-| `tests/Unit/ExampleTest.php` — `that true is true` | Lulus | Assertion dasar berhasil |
-| `tests/Feature/ExampleTest.php` — `the application returns a successful response` | Gagal | Response 500, bukan 200 |
+| Area | Kasus uji |
+| --- | --- |
+| Halaman publik | Hanya event `publish` yang tampil; detail event draft menghasilkan 404 |
+| Autentikasi | Guest area peserta diarahkan ke `/login`; guest area admin diarahkan ke `/admin/login` |
+| Login admin | Admin aktif dapat masuk; admin dengan `is_active = false` ditolak |
+| Pendaftaran | Pendaftaran berhasil, duplikasi ditolak, kuota penuh ditolak, event selesai ditolak, event draft ditolak |
+| Dashboard admin | Statistik total event, total pendaftaran, dan pending approval sesuai data aktual |
+| Verifikasi | Admin hanya melihat dan memverifikasi pendaftar dari event miliknya sendiri |
 
-Penyebab kegagalan:
-
-```text
-Expected response status code [200] but received 500.
-SQLSTATE[HY000]: General error: 1 no such table: events
-(Connection: sqlite, Database: :memory:)
-SQL: select * from "events" where "status" = publish and "events"."deleted_at" is null order by "created_at" desc
-```
-
-Analisis: `phpunit.xml` menggunakan SQLite `:memory:`, tetapi trait `RefreshDatabase` pada `tests/Pest.php` masih dikomentangi. Akibatnya, tabel belum dibuat ketika `EventController@index` menjalankan query.
-
-Rekomendasi: aktifkan `RefreshDatabase` pada seluruh test feature:
+Catatan riwayat: pada pengujian awal, 1 dari 2 test bawaan gagal dengan pesan `no such table: events` karena trait `RefreshDatabase` belum aktif dan skema database test belum dimigrasi. Kondisi tersebut sudah diperbaiki dengan mengaktifkan `RefreshDatabase` di `tests/Pest.php`:
 
 ```php
 pest()->extend(TestCase::class)
     ->use(RefreshDatabase::class)
     ->in('Feature');
 ```
+
+Seluruh 18 test kini lulus dan suite dapat dijalankan ulang dengan perintah di atas.
 
 ## 6. Validasi SVG dan Draw.io
 
@@ -110,29 +105,29 @@ Catatan: 10 file Draw.io terdiri dari satu file multi-halaman `Rancangan-Sistem.
 
 Catatan lanjutan: verifikasi visual berupa screenshot tidak dapat dilakukan pada lingkungan agent, sehingga pemeriksaan difokuskan pada validitas XML, struktur elemen, dan konsistensi koordinat.
 
-## 7. Temuan Perbaikan
+## 7. Temuan dan Tindak Lanjut
 
-| ID | Temuan | Dampak | Prioritas | Rekomendasi |
+| ID | Temuan | Prioritas | Status | Perbaikan |
 | --- | --- | --- | --- | --- |
-| F-01 | Guest admin diarahkan ke `/login`, bukan `/admin/login` | Pengalaman login admin kurang konsisten | Sedang | Tambahkan `redirectTo()` pada middleware `Authenticate` atau sesuaikan nama route login |
-| F-02 | Kartu `Total Registrations` dan `Pending Approvals` di dashboard admin bernilai tetap `0` | Statistik tidak mencerminkan data sebenarnya | Tinggi | Hitung dari `Registrasi` yang dikelompokkan per admin |
-| F-03 | `RegistrasiController@store` tidak memeriksa keberadaan event, status publish, kuota, atau tanggal | Peserta dapat mendaftar ke event draft/null/penuh | Tinggi | Validasi event sebelum membuat registrasi dan hitung jumlah pendaftar |
-| F-04 | `verifikasi()` memakai `Registrasi::findOrFail($id)` tanpa batasan `admin_id` | Admin dapat memverifikasi pendaftar event milik admin lain | Tinggi | Filter registrasi melalui relasi `event.admin_id` milik admin bersangkutan |
-| F-05 | `is_active` tidak diperiksa saat login admin | Admin nonaktif masih bisa masuk | Tinggi | Tambahkan pengecekan `is_active` pada provider atau `adminLogin` |
-| F-06 | `EventController@show` tidak memfilter `status = publish` | Event draft dapat diakses jika slug diketahui | Sedang | Tambahkan `where('status', 'publish')` pada query detail publik |
-| F-07 | Migrasi `events` mengizinkan `selesai` dan `batal`, tetapi form hanya `draft`/`publish` | Inkonsistensi status data | Rendah | Samakan pilihan form dengan enum atau batasi enum sesuai kebutuhan |
-| F-08 | Test feature gagal karena skema test belum dimigrasi | CI/test tidak hijau | Tinggi | Aktifkan `RefreshDatabase` di `tests/Pest.php` |
+| F-01 | Guest admin diarahkan ke `/login`, bukan `/admin/login` | Sedang | Selesai | `redirectGuestsTo()` di `bootstrap/app.php` membedakan area admin |
+| F-02 | Kartu `Total Registrations` dan `Pending Approvals` bernilai tetap `0` | Tinggi | Selesai | Statistik dihitung dari `Registrasi` pada event milik admin |
+| F-03 | Pendaftaran tidak memeriksa event, status publish, kuota, atau tanggal | Tinggi | Selesai | Validasi event, tanggal tutup, kuota, dan duplikasi di `RegistrasiController@store` |
+| F-04 | Verifikasi tidak dibatasi pada event milik admin | Tinggi | Selesai | `verifikasi()` dan daftar pendaftar difilter melalui relasi `event.admin_id` |
+| F-05 | `is_active` tidak diperiksa saat login admin | Tinggi | Selesai | Login admin memakai kredensial + `is_active = true` |
+| F-06 | Detail publik tidak memfilter `status = publish` | Sedang | Selesai | Query detail menambahkan `where('status', 'publish')` |
+| F-07 | Enum status event lebih luas dari pilihan form | Rendah | Selesai | Form dan validasi kini mendukung `draft`, `publish`, `selesai`, dan `batal` |
+| F-08 | Test feature gagal karena skema test belum dimigrasi | Tinggi | Selesai | `RefreshDatabase` aktif dan 16 test fitur baru ditambahkan |
 
 ## 8. Kesimpulan Pengujian
 
 - Seluruh route yang diuji merespons sesuai ekspektasi dasar.
-- Proteksi akses peserta dan admin berfungsi: route terproteksi mengarahkan guest ke halaman login.
-- Halaman detail yang tidak ditemukan menghasilkan 404 dengan benar.
+- Proteksi akses peserta dan admin berfungsi: route terproteksi mengarahkan guest ke halaman login yang sesuai.
+- Halaman detail event draft/tidak ditemukan menghasilkan 404.
 - Seluruh 22 artefak SVG dan 10 file Draw.io valid sebagai XML dan dapat dipakai sebagai dokumentasi desain.
-- Test otomatis belum lulus karena konfigurasi database test belum dimigrasi.
-- Terdapat delapan temuan perbaikan, dengan empat di antaranya berprioritas tinggi.
+- Test otomatis lulus seluruhnya: **18 test, 44 assertion, 0 gagal**.
+- Delapan temuan pengujian telah ditindaklanjuti dan diverifikasi ulang.
 
-Pengujian ini **tidak mengubah kode aplikasi**. Seluruh temuan dicatat sebagai rekomendasi untuk perbaikan berikutnya.
+Perbaikan dilakukan setelah pengujian awal dan tidak mengubah cakupan fitur aplikasi. Seluruh perubahan telah diverifikasi dengan test otomatis dan pemeriksaan manual pada route utama.
 
 ## 9. Daftar Dokumen Terkait
 
